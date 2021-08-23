@@ -1,0 +1,6 @@
+# robots.txt настройки:
+# https://developers.google.com/search/docs/advanced/robots/create-robots-txt?hl=ru
+
+User-agent: * #указывает, для каких роботов установлены директивы
+# Allow: / # разрешает обход всего сайта
+Disallow: / # запрещает обход всего сайта
