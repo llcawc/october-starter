@@ -17,8 +17,7 @@ $userfont: awcOpenSans, sans-serif;
 @import "bootstrap-icons";
 
 // IMPORT SECTION VENDOR LIBRARIUM
-@import "../vendor/photoswipe/main";
-@import "../vendor/photoswipe/pswpskin";
+@import "node_modules/photoswipe/dist/photoswipe";
 
 // FONTS LOAD SECTION
 @mixin font($fname, $fstyle, $fweight, $furl) {

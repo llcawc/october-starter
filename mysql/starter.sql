@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 05 2021 г., 22:14
+-- Время создания: Сен 07 2021 г., 23:54
 -- Версия сервера: 5.7.33
 -- Версия PHP: 7.4.21
 
@@ -66,7 +66,8 @@ INSERT INTO `backend_access_log` (`id`, `user_id`, `ip_address`, `created_at`, `
 (24, 1, '127.0.0.1', '2021-08-22 16:13:41', '2021-08-22 16:13:41'),
 (25, 1, '127.0.0.1', '2021-08-23 07:25:04', '2021-08-23 07:25:04'),
 (26, 1, '127.0.0.1', '2021-08-23 11:26:58', '2021-08-23 11:26:58'),
-(27, 1, '127.0.0.1', '2021-09-05 13:12:32', '2021-09-05 13:12:32');
+(27, 1, '127.0.0.1', '2021-09-05 13:12:32', '2021-09-05 13:12:32'),
+(28, 1, '127.0.0.1', '2021-09-07 16:13:55', '2021-09-07 16:13:55');
 
 -- --------------------------------------------------------
 
@@ -100,7 +101,7 @@ CREATE TABLE `backend_users` (
 --
 
 INSERT INTO `backend_users` (`id`, `first_name`, `last_name`, `login`, `email`, `password`, `activation_code`, `persist_code`, `reset_password_code`, `permissions`, `is_activated`, `role_id`, `activated_at`, `last_login`, `created_at`, `updated_at`, `deleted_at`, `is_superuser`) VALUES
-(1, 'Yuri', 'Rastvorov', 'master', 'rastvorov@gmail.com', '$2y$10$i0gDGobNd4nsVW9xl72ANOuPV/3UI48n3S1AbacVUh4Mxfj2C.UwK', NULL, '$2y$10$5i6fKhoJs5HhKDPt2dJNDu9r92F08Naoii63/qQQibViqqEabhqjm', NULL, '', 1, 2, NULL, '2021-09-05 13:12:32', '2021-03-27 09:32:36', '2021-09-05 13:12:32', NULL, 1);
+(1, 'Yuri', 'Rastvorov', 'master', 'rastvorov@gmail.com', '$2y$10$i0gDGobNd4nsVW9xl72ANOuPV/3UI48n3S1AbacVUh4Mxfj2C.UwK', NULL, '$2y$10$5i6fKhoJs5HhKDPt2dJNDu9r92F08Naoii63/qQQibViqqEabhqjm', NULL, '', 1, 2, NULL, '2021-09-07 16:13:55', '2021-03-27 09:32:36', '2021-09-07 16:13:55', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -650,15 +651,15 @@ INSERT INTO `system_files` (`id`, `disk_name`, `file_name`, `file_size`, `conten
 (22, '6123ac79af8b0342232078.jpg', 'b1.jpg', 367248, 'image/jpeg', '', 'Cottage 250 m2', NULL, NULL, NULL, 1, 22, '2021-08-23 11:11:05', '2021-08-23 11:13:06'),
 (23, '6123ac79b776e543818867.jpg', 'b2.jpg', 295638, 'image/jpeg', '', 'Townhouse \"Silverine\"', NULL, NULL, NULL, 1, 23, '2021-08-23 11:11:05', '2021-08-23 11:13:20'),
 (24, '6123ac7a1ae63906050190.jpg', 'b3.jpg', 310629, 'image/jpeg', '', 'Residential Complex \"Нousewarming\"', NULL, NULL, NULL, 1, 24, '2021-08-23 11:11:06', '2021-08-23 11:13:35'),
-(25, '6123c811ced60781443316.jpg', 'b1.jpg', 367248, 'image/jpeg', 'Cottage 250 m2', '1920x1200', 'featured_images', '7', 'RainLab\\Blog\\Models\\Post', 1, 25, '2021-08-23 13:08:49', '2021-09-05 13:29:29'),
-(26, '6123c811d0512533312396.jpg', 'b2.jpg', 295638, 'image/jpeg', 'Townhouse \"Silverine\"', '1920x1200', 'featured_images', '7', 'RainLab\\Blog\\Models\\Post', 1, 26, '2021-08-23 13:08:49', '2021-09-05 13:29:39'),
-(27, '6123c8123569d006758352.jpg', 'b3.jpg', 310629, 'image/jpeg', 'Residential Complex \"Нousewarming', '1920x1200', 'featured_images', '7', 'RainLab\\Blog\\Models\\Post', 1, 27, '2021-08-23 13:08:50', '2021-09-05 13:29:51'),
-(28, '61350c2843727650901801.jpg', 'b2.jpg', 295638, 'image/jpeg', 'Townhouse \"Silverine\"', '1920x1200', 'featured_images', '6', 'RainLab\\Blog\\Models\\Post', 1, 28, '2021-09-05 15:27:52', '2021-09-05 15:29:06'),
-(29, '61351360a215a235038129.jpg', 'b3.jpg', 310629, 'image/jpeg', 'Residential Complex \"Нousewarming\"', '1920x1200', 'featured_images', '5', 'RainLab\\Blog\\Models\\Post', 1, 29, '2021-09-05 15:58:40', '2021-09-05 16:02:06'),
-(30, '613513de6b873367433869.jpg', 'b4.jpg', 443935, 'image/jpeg', 'Residential Complex \"Soul lift\"', '1920x1200', 'featured_images', '4', 'RainLab\\Blog\\Models\\Post', 1, 30, '2021-09-05 16:00:46', '2021-09-05 16:01:29'),
-(31, '6135144a1bb50485712400.jpg', 'b5.jpg', 294915, 'image/jpeg', 'Typical American Single Family Cottage', '1920x1200', 'featured_images', '3', 'RainLab\\Blog\\Models\\Post', 1, 31, '2021-09-05 16:02:34', '2021-09-05 16:02:57'),
-(32, '6135147b515c3541266362.jpg', 'b6.jpg', 322422, 'image/jpeg', 'European house 350 m2', '1920x1200', 'featured_images', '2', 'RainLab\\Blog\\Models\\Post', 1, 32, '2021-09-05 16:03:23', '2021-09-05 16:03:40'),
-(33, '613514ad6183e695455330.jpg', 'b7.jpg', 414160, 'image/jpeg', 'Modern Cottage', '1920x1200', 'featured_images', '1', 'RainLab\\Blog\\Models\\Post', 1, 33, '2021-09-05 16:04:13', '2021-09-05 16:04:36');
+(25, '6123c811ced60781443316.jpg', 'b1.jpg', 367248, 'image/jpeg', 'Cottage 250 m2', 'data-pswp-width=\"1920\" data-pswp-height=\"1200\"', 'featured_images', '7', 'RainLab\\Blog\\Models\\Post', 1, 25, '2021-08-23 13:08:49', '2021-09-07 16:15:44'),
+(26, '6123c811d0512533312396.jpg', 'b2.jpg', 295638, 'image/jpeg', 'Townhouse \"Silverine\"', 'data-pswp-width=\"1920\" data-pswp-height=\"1200\"', 'featured_images', '7', 'RainLab\\Blog\\Models\\Post', 1, 26, '2021-08-23 13:08:49', '2021-09-07 16:15:55'),
+(27, '6123c8123569d006758352.jpg', 'b3.jpg', 310629, 'image/jpeg', 'Residential Complex \"Нousewarming', 'data-pswp-width=\"1920\" data-pswp-height=\"1200\"', 'featured_images', '7', 'RainLab\\Blog\\Models\\Post', 1, 27, '2021-08-23 13:08:50', '2021-09-07 16:16:07'),
+(28, '61350c2843727650901801.jpg', 'b2.jpg', 295638, 'image/jpeg', 'Townhouse \"Silverine\"', 'data-pswp-width=\"1920\" data-pswp-height=\"1200\"', 'featured_images', '6', 'RainLab\\Blog\\Models\\Post', 1, 28, '2021-09-05 15:27:52', '2021-09-07 17:48:35'),
+(29, '61351360a215a235038129.jpg', 'b3.jpg', 310629, 'image/jpeg', 'Residential Complex \"Нousewarming\"', 'data-pswp-width=\"1920\" data-pswp-height=\"1200\"', 'featured_images', '5', 'RainLab\\Blog\\Models\\Post', 1, 29, '2021-09-05 15:58:40', '2021-09-07 17:48:51'),
+(30, '613513de6b873367433869.jpg', 'b4.jpg', 443935, 'image/jpeg', 'Residential Complex \"Soul lift\"', 'data-pswp-width=\"1920\" data-pswp-height=\"1200\"', 'featured_images', '4', 'RainLab\\Blog\\Models\\Post', 1, 30, '2021-09-05 16:00:46', '2021-09-07 17:49:12'),
+(31, '6135144a1bb50485712400.jpg', 'b5.jpg', 294915, 'image/jpeg', 'Typical American Single Family Cottage', 'data-pswp-width=\"1920\" data-pswp-height=\"1200\"', 'featured_images', '3', 'RainLab\\Blog\\Models\\Post', 1, 31, '2021-09-05 16:02:34', '2021-09-07 17:49:25'),
+(32, '6135147b515c3541266362.jpg', 'b6.jpg', 322422, 'image/jpeg', 'European house 350 m2', 'data-pswp-width=\"1920\" data-pswp-height=\"1200\"', 'featured_images', '2', 'RainLab\\Blog\\Models\\Post', 1, 32, '2021-09-05 16:03:23', '2021-09-07 17:49:41'),
+(33, '613514ad6183e695455330.jpg', 'b7.jpg', 414160, 'image/jpeg', 'Modern Cottage', 'data-pswp-width=\"1920\" data-pswp-height=\"1200\"', 'featured_images', '1', 'RainLab\\Blog\\Models\\Post', 1, 33, '2021-09-05 16:04:13', '2021-09-07 17:49:53');
 
 -- --------------------------------------------------------
 
@@ -774,7 +775,7 @@ INSERT INTO `system_parameters` (`id`, `namespace`, `group`, `item`, `value`) VA
 (1, 'system', 'update', 'count', '0'),
 (2, 'system', 'core', 'hash', '\"652ebd026445ccaeb3ba083f00830dc0\"'),
 (3, 'system', 'core', 'build', '\"473\"'),
-(4, 'system', 'update', 'retry', '1630873479'),
+(4, 'system', 'update', 'retry', '1631128437'),
 (5, 'system', 'theme', 'history', '[]'),
 (6, 'cms', 'theme', 'active', '\"starter\"');
 
@@ -1024,12 +1025,17 @@ CREATE TABLE `system_request_logs` (
 INSERT INTO `system_request_logs` (`id`, `status_code`, `url`, `referer`, `count`, `created_at`, `updated_at`) VALUES
 (1, 404, 'http://starter/assets/images/b3.jpg', '[\"http:\\/\\/starter\\/\"]', 5, '2021-08-23 14:28:52', '2021-08-23 14:29:18'),
 (2, 404, 'http://starter/404', NULL, 1, '2021-08-23 14:35:36', '2021-08-23 14:35:36'),
-(3, 404, 'http://starter/favicon.ico', '[\"http:\\/\\/starter\\/themes\\/starter\\/assets\\/images\\/b2.jpg\"]', 4, '2021-09-04 17:16:36', '2021-09-05 15:21:07'),
+(3, 404, 'http://starter/favicon.ico', '[\"http:\\/\\/starter\\/themes\\/starter\\/assets\\/images\\/b2.jpg\"]', 37, '2021-09-04 17:16:36', '2021-09-07 16:17:17'),
 (4, 404, 'http://starter/themes/terra/assets/images/preview.jpg', '[\"http:\\/\\/localhost:3000\\/\"]', 9, '2021-09-05 13:53:06', '2021-09-05 14:00:50'),
 (5, 404, 'http://starter/image', '[\"http:\\/\\/localhost:3000\\/blog\"]', 1, '2021-09-05 14:52:39', '2021-09-05 14:52:39'),
 (6, 404, 'http://starter/blog/post/image', '[\"http:\\/\\/localhost:3000\\/blog\\/post\\/subektivnyj-genij-metodologiya-i-osobennosti\"]', 1, '2021-09-05 14:52:45', '2021-09-05 14:52:45'),
 (7, 404, 'http://starter/blog/post/%7B%22id%22:25,%22disk_name%22:%226123c811ced60781443316.jpg%22,%22file_name%22:%22b1.jpg%22,%22file_size%22:367248,%22content_type%22:%22image/jpeg%22,%22title%22:%2', '[\"http:\\/\\/localhost:3000\\/blog\\/post\\/subektivnyj-genij-metodologiya-i-osobennosti\"]', 4, '2021-09-05 15:17:01', '2021-09-05 15:21:15'),
-(8, 404, 'http://starter/blog/post/[%7B%22id%22:20,%22disk_name%22:%2261236f089dfb5177766025.jpg%22,%22file_name%22:%22b1.jpg%22,%22file_size%22:367248,%22content_type%22:%22image/jpeg%22,%22title%22:%', '[\"http:\\/\\/localhost:3000\\/blog\\/post\\/subektivnyj-genij-metodologiya-i-osobennosti\"]', 1, '2021-09-05 15:19:33', '2021-09-05 15:19:33');
+(8, 404, 'http://starter/blog/post/[%7B%22id%22:20,%22disk_name%22:%2261236f089dfb5177766025.jpg%22,%22file_name%22:%22b1.jpg%22,%22file_size%22:367248,%22content_type%22:%22image/jpeg%22,%22title%22:%', '[\"http:\\/\\/localhost:3000\\/blog\\/post\\/subektivnyj-genij-metodologiya-i-osobennosti\"]', 1, '2021-09-05 15:19:33', '2021-09-05 15:19:33'),
+(9, 404, 'http://starter/themes/starter/assets/js/dropdown.js.map', NULL, 69, '2021-09-06 17:44:34', '2021-09-07 15:25:49'),
+(10, 404, 'http://starter/themes/starter/assets/vendor/photoswipe/photoswipe-ui', '[\"http:\\/\\/starter\\/\"]', 2, '2021-09-07 09:53:28', '2021-09-07 09:54:00'),
+(11, 404, 'http://starter/themes/starter/assets/js/photoswipe.esm.js.map', NULL, 71, '2021-09-07 15:29:18', '2021-09-07 16:51:33'),
+(12, 404, 'http://starter/themes/starter/assets/css/node_modules/photoswipe/dist/photoswipe.css', '[\"http:\\/\\/localhost:3000\\/themes\\/starter\\/assets\\/css\\/main.min.css?browsersync=1631040046665\"]', 1, '2021-09-07 15:40:46', '2021-09-07 15:40:46'),
+(13, 404, 'http://starter/node_modules/photoswipe/dist/photoswipe.css', '[\"http:\\/\\/localhost:3000\\/themes\\/starter\\/assets\\/css\\/main.min.css?browsersync=1631040058377\"]', 14, '2021-09-07 15:40:58', '2021-09-07 15:53:15');
 
 -- --------------------------------------------------------
 
@@ -1093,10 +1099,10 @@ INSERT INTO `vdomah_blogviews_views` (`views`, `post_id`) VALUES
 (77, 1),
 (65, 2),
 (56, 3),
-(45, 4),
-(34, 5),
-(26, 6),
-(17, 7);
+(46, 4),
+(35, 5),
+(28, 6),
+(20, 7);
 
 --
 -- Индексы сохранённых таблиц
@@ -1372,7 +1378,7 @@ ALTER TABLE `vdomah_blogviews_views`
 -- AUTO_INCREMENT для таблицы `backend_access_log`
 --
 ALTER TABLE `backend_access_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT для таблицы `backend_users`
@@ -1426,7 +1432,7 @@ ALTER TABLE `cms_theme_templates`
 -- AUTO_INCREMENT для таблицы `deferred_bindings`
 --
 ALTER TABLE `deferred_bindings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `failed_jobs`
@@ -1534,7 +1540,7 @@ ALTER TABLE `system_plugin_versions`
 -- AUTO_INCREMENT для таблицы `system_request_logs`
 --
 ALTER TABLE `system_request_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT для таблицы `system_revisions`
