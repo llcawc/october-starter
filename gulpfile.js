@@ -18,6 +18,11 @@ let paths = {
     dest: `themes/${theme}/assets/css`,
   },
 
+  images: {
+    src: `themes/${theme}/assets/src/**/*`,
+    dest: `themes/${theme}/assets/images`,
+  },
+
   deploy: {
     hostname: "host.ru", // Deploy hostname
     destination: "domen.ru/www/", // Deploy destination
@@ -72,8 +77,10 @@ import notify from "gulp-notify";
 import postCss from "gulp-postcss";
 import cssnano from "cssnano";
 import autoprefixer from "autoprefixer";
-import rsync from "gulp-rsync";
 import rename from "gulp-rename";
+import imagemin from "gulp-imagemin";
+import newer from "gulp-newer";
+import rsync from "gulp-rsync";
 
 function browsersync() {
   browserSync.init({
@@ -241,6 +248,15 @@ function styles() {
     .pipe(browserSync.stream());
 }
 
+function images() {
+  return src(paths.images.src)
+    .pipe(plumber())
+    .pipe(newer(paths.images.dest))
+    .pipe(imagemin({ verbose: "true" }))
+    .pipe(dest(paths.images.dest))
+    .pipe(browserSync.stream());
+}
+
 function deploy() {
   return src("./").pipe(
     rsync({
@@ -274,6 +290,6 @@ function startwatch() {
   ).on("change", browserSync.reload);
 }
 
-export { css, js, scripts, styles, deploy };
+export { css, js, scripts, styles, images, deploy };
 export let build = parallel(scripts, styles);
 export default series(js, css, parallel(browsersync, startwatch));
