@@ -72,6 +72,7 @@ import sassGulp from "gulp-sass";
 import sassglob from "gulp-sass-glob";
 import sourcemaps from "gulp-sourcemaps";
 const sass = sassGulp(sassDark);
+import purgecss from "gulp-purgecss";
 import plumber from "gulp-plumber";
 import notify from "gulp-notify";
 import postCss from "gulp-postcss";
@@ -218,6 +219,19 @@ function css() {
     .pipe(sassglob())
     .pipe(sass({ "include css": true }))
     .pipe(
+      purgecss({
+        content: [
+          `plugins/**/*.htm`,
+          `themes/${theme}/**/*.htm`,
+          `themes/${theme}/assets/js/*.js`,
+          "node_modules/photoswipe/dist/photoswipe.css",
+          "node_modules/bootstrap/js/dist/dom/*.js",
+          "node_modules/bootstrap/js/dist/{base-component,button,dropdown,collapse}.js",
+          "node_modules/bootstrap/scss/_reboot.scss",
+        ],
+      })
+    )
+    .pipe(
       postCss([
         autoprefixer({ grid: "autoplace" }),
         cssnano({
@@ -235,6 +249,19 @@ function styles() {
   return src(paths.styles.src)
     .pipe(sassglob())
     .pipe(sass({ "include css": true }))
+    .pipe(
+      purgecss({
+        content: [
+          `plugins/**/*.htm`,
+          `themes/${theme}/**/*.htm`,
+          `themes/${theme}/assets/js/*.js`,
+          "node_modules/photoswipe/dist/photoswipe.css",
+          "node_modules/bootstrap/js/dist/dom/*.js",
+          "node_modules/bootstrap/js/dist/{base-component,button,dropdown,collapse}.js",
+          "node_modules/bootstrap/scss/_reboot.scss",
+        ],
+      })
+    )
     .pipe(
       postCss([
         autoprefixer({ grid: "autoplace" }),
