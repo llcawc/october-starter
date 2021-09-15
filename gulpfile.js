@@ -9,18 +9,38 @@ let localhost = "starter", // Local domain
 
 let paths = {
   scripts: {
-    src: `themes/${theme}/assets/js/app.js`,
+    src: `themes/${theme}/app/js/app.js`,
     dest: `themes/${theme}/assets/js`,
   },
 
   styles: {
-    src: `themes/${theme}/assets/sass/main.*`,
+    src: `themes/${theme}/app/sass/main.*`,
     dest: `themes/${theme}/assets/css`,
   },
 
   images: {
-    src: `themes/${theme}/assets/src/**/*`,
+    src: `themes/${theme}/app/src/**/*`,
     dest: `themes/${theme}/assets/images`,
+  },
+
+  purge: {
+    content: [
+      `plugins/**/*.htm`,
+      `themes/${theme}/**/*.htm`,
+      `themes/${theme}/app/js/app.js`,
+      `themes/${theme}/app/js/blocks/*.js`,
+      // `themes/${theme}/app/vendor/**/*.*`,
+      "node_modules/photoswipe/dist/photoswipe.css",
+      "node_modules/bootstrap/scss/_reboot.scss",
+      "node_modules/bootstrap/js/dist/dom/*.js",
+      "node_modules/bootstrap/js/dist/{base-component,button,dropdown,collapse}.js",
+    ],
+    safelist: {
+      // standart: ["selectorname"],
+      deep: [/scrolltotop$/],
+      greedy: [/on$/, /down$/, /is-hidden$/],
+    },
+    keyframes: true,
   },
 
   deploy: {
@@ -38,13 +58,10 @@ let paths = {
       "plugins",
       "storage",
       "vendor",
+      // `themes/${theme}/app`,
       // 'storage/*.sqlite',
-      // '.htaccess',
       // 'gulpfile.js',
       // 'package.json',
-      // `themes/${theme}/assets/css/main.min.css.map`,
-      // `themes/${theme}/assets/js/app.js`,
-      // `themes/${theme}/assets/sass`,
       // '*.editorconfig',
       // '*.gitignore',
       "package-lock.json",
@@ -82,6 +99,7 @@ import rename from "gulp-rename";
 import imagemin from "gulp-imagemin";
 import newer from "gulp-newer";
 import rsync from "gulp-rsync";
+import del from "del";
 
 function browsersync() {
   browserSync.init({
@@ -119,7 +137,7 @@ function js() {
           module: {
             rules: [
               {
-                test: /\.(js)$/,
+                test: /\.m?js$/,
                 exclude: /(node_modules)/,
                 use: {
                   loader: "babel-loader",
@@ -218,19 +236,7 @@ function css() {
     )
     .pipe(sassglob())
     .pipe(sass({ "include css": true }))
-    .pipe(
-      purgecss({
-        content: [
-          `plugins/**/*.htm`,
-          `themes/${theme}/**/*.htm`,
-          `themes/${theme}/assets/js/*.js`,
-          "node_modules/photoswipe/dist/photoswipe.css",
-          "node_modules/bootstrap/js/dist/dom/*.js",
-          "node_modules/bootstrap/js/dist/{base-component,button,dropdown,collapse}.js",
-          "node_modules/bootstrap/scss/_reboot.scss",
-        ],
-      })
-    )
+    .pipe(purgecss(paths.purge))
     .pipe(
       postCss([
         autoprefixer({ grid: "autoplace" }),
@@ -249,19 +255,7 @@ function styles() {
   return src(paths.styles.src)
     .pipe(sassglob())
     .pipe(sass({ "include css": true }))
-    .pipe(
-      purgecss({
-        content: [
-          `plugins/**/*.htm`,
-          `themes/${theme}/**/*.htm`,
-          `themes/${theme}/assets/js/*.js`,
-          "node_modules/photoswipe/dist/photoswipe.css",
-          "node_modules/bootstrap/js/dist/dom/*.js",
-          "node_modules/bootstrap/js/dist/{base-component,button,dropdown,collapse}.js",
-          "node_modules/bootstrap/scss/_reboot.scss",
-        ],
-      })
-    )
+    .pipe(purgecss(paths.purge))
     .pipe(
       postCss([
         autoprefixer({ grid: "autoplace" }),
@@ -301,6 +295,10 @@ function deploy() {
   );
 }
 
+function clean() {
+  return del([`themes/${theme}/assets/css/*.map`], { force: true });
+}
+
 function startwatch() {
   watch(`themes/${theme}/assets/sass/**/*`, { usePolling: true }, css);
   watch(
@@ -317,6 +315,6 @@ function startwatch() {
   ).on("change", browserSync.reload);
 }
 
-export { css, js, scripts, styles, images, deploy };
-export let build = parallel(scripts, styles);
+export { js, scripts, css, styles, images, deploy };
+export let build = series(clean, scripts, styles);
 export default series(js, css, parallel(browsersync, startwatch));
