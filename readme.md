@@ -3,7 +3,7 @@
 _Revision 1.1.0 from 05.09.2021_
 
 > Starter Template by pasmurno<br>
-> Based on October/Winter CMS. SASS/SCSS. Gulp. Webpack and module JS. Bootstrap. Bootstrap-Icons.
+> Based on OctoberCMS. SASS/SCSS. Gulp. Webpack and module JS. Bootstrap. Bootstrap-Icons.
 
 ---
 
