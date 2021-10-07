@@ -1,0 +1,156 @@
+1633639660a:1:{s:8:"blog.htm";a:13:{s:8:"fileName";s:8:"blog.htm";s:7:"content";s:3232:"title = "Blog"
+url = "/blog/:page?"
+layout = "default"
+description = "Blog Caffee"
+meta_title = "Blog cafe \"CoffeeCafe\""
+meta_description = "New vision in cafe industry"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 3
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+==
+{% set posts = blogPosts.posts %}
+{% set mnths = ['','января','февраля','марта','апреля','мая','июня','июля','августа', 'сентября','октября','ноября','декабря'] %}
+{% set days = ['','Понедельник','Вторник','Среда','Четверг','Пятница', 'Суббота', 'Воскресенье'] %}
+
+<main class="container-md">
+  <div class="row">
+
+    {% for post in posts %}
+    <section class="col-sm-12 mt-5">
+      <h3 class="mb-3 text-center text-sm-start"><a class="text-decoration-none" href="{{ post.url }}">{{ post.title}}</a></h3>
+      <div class="row mb-3">
+        <p class="col-12 col-sm-6 m-0 text-center text-sm-start">
+          <span>
+            {{ days[post.published_at|date("N")] }}{{
+            post.published_at|date(", j ") }}{{
+            mnths[post.published_at|date("n")] }}{{
+            post.published_at|date(" Y") }}
+          </span>
+          <span class="pe-3"><i class="bi bi-eye"></i>&nbsp;{{post.views}}</span>
+        </p>
+        <p class="col-12 col-sm-6 m-0 text-center text-sm-end">
+          {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
+          <span>Category: {{ categoryLinks | raw }}</span>
+        </p>
+      </div>
+      <div class="float-start">
+        <a href="{{ post.url }}">
+          {% if post.featured_images.count > 0 %}
+          <img class="blog-img d-block img-thumbnail" src="{{ post.featured_images.first.getThumb(320, 'auto') }}" />
+          {% else %}
+          <img class="blog-img d-block img-thumbnail" src="https://via.placeholder.com/320x200" />
+          {% endif %}
+        </a>
+      </div>
+      {{ post.summary|raw }}
+      <a href="{{ post.url }}">
+        <p class="mb-0">Продолжить чтение <i class="bi bi-arrow-right"></i></p>
+      </a>
+    </section>
+    {% else %}
+    <div class="text-center">
+      <p>{{ blogPosts.noPostsMessage }}</p>
+    </div>
+    {% endfor %}
+
+
+    <div class="col-sm-12 py-5">
+      {% if posts.lastPage > 1 %}
+      <ul class="pagination mb-0">
+        {% if posts.currentPage > 1 %}
+        <li><a href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a>
+        </li>
+        {% endif %}
+
+        {% for page in 1..posts.lastPage %}
+        <li class="{{ posts.currentPage == page ? 'active' : null }}">
+          <a href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): page }) }}">{{ page }}</a>
+        </li>
+        {% endfor %}
+
+        {% if posts.lastPage > posts.currentPage %}
+        <li><a href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a>
+        </li>
+        {% endif %}
+      </ul>
+      {% endif %}
+    </div>
+
+  </div>
+</main>
+";s:5:"mtime";i:1630866678;s:6:"markup";s:2845:"{% set posts = blogPosts.posts %}
+{% set mnths = ['','января','февраля','марта','апреля','мая','июня','июля','августа', 'сентября','октября','ноября','декабря'] %}
+{% set days = ['','Понедельник','Вторник','Среда','Четверг','Пятница', 'Суббота', 'Воскресенье'] %}
+
+<main class="container-md">
+  <div class="row">
+
+    {% for post in posts %}
+    <section class="col-sm-12 mt-5">
+      <h3 class="mb-3 text-center text-sm-start"><a class="text-decoration-none" href="{{ post.url }}">{{ post.title}}</a></h3>
+      <div class="row mb-3">
+        <p class="col-12 col-sm-6 m-0 text-center text-sm-start">
+          <span>
+            {{ days[post.published_at|date("N")] }}{{
+            post.published_at|date(", j ") }}{{
+            mnths[post.published_at|date("n")] }}{{
+            post.published_at|date(" Y") }}
+          </span>
+          <span class="pe-3"><i class="bi bi-eye"></i>&nbsp;{{post.views}}</span>
+        </p>
+        <p class="col-12 col-sm-6 m-0 text-center text-sm-end">
+          {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
+          <span>Category: {{ categoryLinks | raw }}</span>
+        </p>
+      </div>
+      <div class="float-start">
+        <a href="{{ post.url }}">
+          {% if post.featured_images.count > 0 %}
+          <img class="blog-img d-block img-thumbnail" src="{{ post.featured_images.first.getThumb(320, 'auto') }}" />
+          {% else %}
+          <img class="blog-img d-block img-thumbnail" src="https://via.placeholder.com/320x200" />
+          {% endif %}
+        </a>
+      </div>
+      {{ post.summary|raw }}
+      <a href="{{ post.url }}">
+        <p class="mb-0">Продолжить чтение <i class="bi bi-arrow-right"></i></p>
+      </a>
+    </section>
+    {% else %}
+    <div class="text-center">
+      <p>{{ blogPosts.noPostsMessage }}</p>
+    </div>
+    {% endfor %}
+
+
+    <div class="col-sm-12 py-5">
+      {% if posts.lastPage > 1 %}
+      <ul class="pagination mb-0">
+        {% if posts.currentPage > 1 %}
+        <li><a href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a>
+        </li>
+        {% endif %}
+
+        {% for page in 1..posts.lastPage %}
+        <li class="{{ posts.currentPage == page ? 'active' : null }}">
+          <a href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): page }) }}">{{ page }}</a>
+        </li>
+        {% endfor %}
+
+        {% if posts.lastPage > posts.currentPage %}
+        <li><a href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a>
+        </li>
+        {% endif %}
+      </ul>
+      {% endif %}
+    </div>
+
+  </div>
+</main>";s:4:"code";N;s:5:"title";s:4:"Blog";s:3:"url";s:12:"/blog/:page?";s:6:"layout";s:7:"default";s:11:"description";s:11:"Blog Caffee";s:10:"meta_title";s:22:"Blog cafe "CoffeeCafe"";s:16:"meta_description";s:27:"New vision in cafe industry";s:9:"is_hidden";s:1:"0";s:9:"blogPosts";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"3";s:14:"noPostsMessage";s:34:"Записей не найдено";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:13:"blog/category";s:8:"postPage";s:9:"blog/post";}}}
