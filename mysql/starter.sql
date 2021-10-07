@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 07 2021 г., 23:54
+-- Время создания: Окт 02 2021 г., 18:18
 -- Версия сервера: 5.7.33
 -- Версия PHP: 7.4.21
 
@@ -67,7 +67,8 @@ INSERT INTO `backend_access_log` (`id`, `user_id`, `ip_address`, `created_at`, `
 (25, 1, '127.0.0.1', '2021-08-23 07:25:04', '2021-08-23 07:25:04'),
 (26, 1, '127.0.0.1', '2021-08-23 11:26:58', '2021-08-23 11:26:58'),
 (27, 1, '127.0.0.1', '2021-09-05 13:12:32', '2021-09-05 13:12:32'),
-(28, 1, '127.0.0.1', '2021-09-07 16:13:55', '2021-09-07 16:13:55');
+(28, 1, '127.0.0.1', '2021-09-07 16:13:55', '2021-09-07 16:13:55'),
+(29, 1, '127.0.0.1', '2021-10-01 06:02:46', '2021-10-01 06:02:46');
 
 -- --------------------------------------------------------
 
@@ -101,7 +102,7 @@ CREATE TABLE `backend_users` (
 --
 
 INSERT INTO `backend_users` (`id`, `first_name`, `last_name`, `login`, `email`, `password`, `activation_code`, `persist_code`, `reset_password_code`, `permissions`, `is_activated`, `role_id`, `activated_at`, `last_login`, `created_at`, `updated_at`, `deleted_at`, `is_superuser`) VALUES
-(1, 'Yuri', 'Rastvorov', 'master', 'rastvorov@gmail.com', '$2y$10$i0gDGobNd4nsVW9xl72ANOuPV/3UI48n3S1AbacVUh4Mxfj2C.UwK', NULL, '$2y$10$5i6fKhoJs5HhKDPt2dJNDu9r92F08Naoii63/qQQibViqqEabhqjm', NULL, '', 1, 2, NULL, '2021-09-07 16:13:55', '2021-03-27 09:32:36', '2021-09-07 16:13:55', NULL, 1);
+(1, 'Yuri', 'Rastvorov', 'master', 'rastvorov@gmail.com', '$2y$10$i0gDGobNd4nsVW9xl72ANOuPV/3UI48n3S1AbacVUh4Mxfj2C.UwK', NULL, '$2y$10$5i6fKhoJs5HhKDPt2dJNDu9r92F08Naoii63/qQQibViqqEabhqjm', NULL, '', 1, 2, NULL, '2021-10-01 06:02:46', '2021-03-27 09:32:36', '2021-10-01 06:02:46', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -642,7 +643,6 @@ CREATE TABLE `system_files` (
 INSERT INTO `system_files` (`id`, `disk_name`, `file_name`, `file_size`, `content_type`, `title`, `description`, `field`, `attachment_id`, `attachment_type`, `is_public`, `sort_order`, `created_at`, `updated_at`) VALUES
 (3, '605f37ad3db71494243350.csv', 'posts.csv', 15183, 'text/html', NULL, NULL, NULL, NULL, NULL, 0, 3, '2021-03-27 10:48:29', '2021-03-27 10:48:29'),
 (11, '60b161930e01a924225074.jpg', 'пямятка.jpg', 126006, 'image/jpeg', NULL, NULL, 'logo', '6', 'Backend\\Models\\BrandSetting', 1, 11, '2021-05-28 18:33:07', '2021-05-28 18:33:13'),
-(13, '60e99a5f5cacc044473542.png', 'dzen.png', 25850, 'image/png', NULL, NULL, 'favicon', '6', 'Backend\\Models\\BrandSetting', 1, 13, '2021-07-10 10:02:23', '2021-07-10 10:02:29'),
 (14, '6122a1cc46cd9265512903.jpg', 'kote.jpg', 20056, 'image/jpeg', NULL, NULL, 'content_images', '13', 'RainLab\\Blog\\Models\\Post', 1, 14, '2021-08-22 16:13:16', '2021-08-22 16:13:21'),
 (15, '6122a23eeb62c767346297.jpg', 'kote.jpg', 20056, 'image/jpeg', NULL, NULL, 'content_images', '13', 'RainLab\\Blog\\Models\\Post', 1, 15, '2021-08-22 16:15:10', '2021-08-22 16:17:18'),
 (19, '61236f089dd5e025357195.jpg', 'b2.jpg', 295638, 'image/jpeg', '', 'Townhouse \"Silverine\"', 'featured_images', '13', 'RainLab\\Blog\\Models\\Post', 1, 2, '2021-08-23 06:48:56', '2021-08-23 06:53:57'),
@@ -742,14 +742,6 @@ CREATE TABLE `system_mail_templates` (
 --
 
 INSERT INTO `system_mail_templates` (`id`, `code`, `subject`, `description`, `content_html`, `content_text`, `layout_id`, `is_custom`, `created_at`, `updated_at`) VALUES
-(1, 'rainlab.forum::mail.topic_reply', NULL, NULL, NULL, NULL, 1, 0, '2021-04-08 06:07:43', '2021-04-08 06:07:43'),
-(2, 'rainlab.forum::mail.member_report', NULL, NULL, NULL, NULL, 1, 0, '2021-04-08 06:07:43', '2021-04-08 06:07:43'),
-(3, 'rainlab.user::mail.activate', NULL, 'Activate a new user', NULL, NULL, 1, 0, '2021-04-08 06:07:43', '2021-04-08 06:07:43'),
-(4, 'rainlab.user::mail.welcome', NULL, 'User confirmed their account', NULL, NULL, 1, 0, '2021-04-08 06:07:43', '2021-04-08 06:07:43'),
-(5, 'rainlab.user::mail.restore', NULL, 'User requests a password reset', NULL, NULL, 1, 0, '2021-04-08 06:07:43', '2021-04-08 06:07:43'),
-(6, 'rainlab.user::mail.new_user', NULL, 'Notify admins of a new sign up', NULL, NULL, 2, 0, '2021-04-08 06:07:43', '2021-04-08 06:07:43'),
-(7, 'rainlab.user::mail.reactivate', NULL, 'User has reactivated their account', NULL, NULL, 1, 0, '2021-04-08 06:07:43', '2021-04-08 06:07:43'),
-(8, 'rainlab.user::mail.invite', NULL, 'Invite a new user to the website', NULL, NULL, 1, 0, '2021-04-08 06:07:43', '2021-04-08 06:07:43'),
 (9, 'backend::mail.invite', NULL, 'Invite new admin to the site', NULL, NULL, 2, 0, '2021-04-08 06:07:43', '2021-04-08 06:07:43'),
 (10, 'backend::mail.restore', NULL, 'Reset an admin password', NULL, NULL, 2, 0, '2021-04-08 06:07:43', '2021-04-08 06:07:43');
 
@@ -775,7 +767,7 @@ INSERT INTO `system_parameters` (`id`, `namespace`, `group`, `item`, `value`) VA
 (1, 'system', 'update', 'count', '0'),
 (2, 'system', 'core', 'hash', '\"652ebd026445ccaeb3ba083f00830dc0\"'),
 (3, 'system', 'core', 'build', '\"473\"'),
-(4, 'system', 'update', 'retry', '1631128437'),
+(4, 'system', 'update', 'retry', '1633165369'),
 (5, 'system', 'theme', 'history', '[]'),
 (6, 'cms', 'theme', 'active', '\"starter\"');
 
@@ -1025,7 +1017,7 @@ CREATE TABLE `system_request_logs` (
 INSERT INTO `system_request_logs` (`id`, `status_code`, `url`, `referer`, `count`, `created_at`, `updated_at`) VALUES
 (1, 404, 'http://starter/assets/images/b3.jpg', '[\"http:\\/\\/starter\\/\"]', 5, '2021-08-23 14:28:52', '2021-08-23 14:29:18'),
 (2, 404, 'http://starter/404', NULL, 1, '2021-08-23 14:35:36', '2021-08-23 14:35:36'),
-(3, 404, 'http://starter/favicon.ico', '[\"http:\\/\\/starter\\/themes\\/starter\\/assets\\/images\\/b2.jpg\"]', 37, '2021-09-04 17:16:36', '2021-09-07 16:17:17'),
+(3, 404, 'http://starter/favicon.ico', '[\"http:\\/\\/starter\\/themes\\/starter\\/assets\\/images\\/b2.jpg\"]', 38, '2021-09-04 17:16:36', '2021-09-20 11:27:41'),
 (4, 404, 'http://starter/themes/terra/assets/images/preview.jpg', '[\"http:\\/\\/localhost:3000\\/\"]', 9, '2021-09-05 13:53:06', '2021-09-05 14:00:50'),
 (5, 404, 'http://starter/image', '[\"http:\\/\\/localhost:3000\\/blog\"]', 1, '2021-09-05 14:52:39', '2021-09-05 14:52:39'),
 (6, 404, 'http://starter/blog/post/image', '[\"http:\\/\\/localhost:3000\\/blog\\/post\\/subektivnyj-genij-metodologiya-i-osobennosti\"]', 1, '2021-09-05 14:52:45', '2021-09-05 14:52:45'),
@@ -1035,7 +1027,20 @@ INSERT INTO `system_request_logs` (`id`, `status_code`, `url`, `referer`, `count
 (10, 404, 'http://starter/themes/starter/assets/vendor/photoswipe/photoswipe-ui', '[\"http:\\/\\/starter\\/\"]', 2, '2021-09-07 09:53:28', '2021-09-07 09:54:00'),
 (11, 404, 'http://starter/themes/starter/assets/js/photoswipe.esm.js.map', NULL, 71, '2021-09-07 15:29:18', '2021-09-07 16:51:33'),
 (12, 404, 'http://starter/themes/starter/assets/css/node_modules/photoswipe/dist/photoswipe.css', '[\"http:\\/\\/localhost:3000\\/themes\\/starter\\/assets\\/css\\/main.min.css?browsersync=1631040046665\"]', 1, '2021-09-07 15:40:46', '2021-09-07 15:40:46'),
-(13, 404, 'http://starter/node_modules/photoswipe/dist/photoswipe.css', '[\"http:\\/\\/localhost:3000\\/themes\\/starter\\/assets\\/css\\/main.min.css?browsersync=1631040058377\"]', 14, '2021-09-07 15:40:58', '2021-09-07 15:53:15');
+(13, 404, 'http://starter/node_modules/photoswipe/dist/photoswipe.css', '[\"http:\\/\\/localhost:3000\\/themes\\/starter\\/assets\\/css\\/main.min.css?browsersync=1631040058377\"]', 14, '2021-09-07 15:40:58', '2021-09-07 15:53:15'),
+(14, 404, 'http://starter/themes/starter/assets/images/thumb/b4-640x400.jpg', '[\"http:\\/\\/starter\\/\"]', 2, '2021-09-11 14:35:49', '2021-09-11 14:35:55'),
+(15, 404, 'http://starter/themes/starter/assets/images/thumb/b3-640x400.jpg', '[\"http:\\/\\/starter\\/\"]', 2, '2021-09-11 14:35:49', '2021-09-11 14:35:55'),
+(16, 404, 'http://starter/themes/starter/assets/images/preview.jpg', '[\"http:\\/\\/starter\\/\"]', 4, '2021-09-11 14:35:49', '2021-09-11 14:37:03'),
+(17, 404, 'http://starter/themes/starter/assets/images/thumb/b1-640x400.jpg', '[\"http:\\/\\/starter\\/\"]', 2, '2021-09-11 14:35:49', '2021-09-11 14:35:55'),
+(18, 404, 'http://starter/themes/starter/assets/images/thumb/b2-640x400.jpg', '[\"http:\\/\\/starter\\/\"]', 2, '2021-09-11 14:35:49', '2021-09-11 14:35:55'),
+(19, 404, 'http://starter/themes/starter/assets/images/thumb/b5-640x400.jpg', '[\"http:\\/\\/starter\\/\"]', 3, '2021-09-11 14:35:49', '2021-09-11 14:36:02'),
+(20, 404, 'http://starter/themes/starter/assets/images/thumb/b6-640x400.jpg', '[\"http:\\/\\/starter\\/\"]', 2, '2021-09-11 14:35:49', '2021-09-11 14:35:55'),
+(21, 404, 'http://starter/themes/starter/assets/images/thumb/b7-640x400.jpg', '[\"http:\\/\\/starter\\/\"]', 2, '2021-09-11 14:35:49', '2021-09-11 14:35:55'),
+(22, 404, 'http://starter/themes/starter/assets/images/favicon.png', '[\"http:\\/\\/starter\\/\"]', 2, '2021-09-11 14:35:50', '2021-09-11 14:35:55'),
+(23, 404, 'http://starter/themes/starter/assets/images/b5.jpg', '[\"http:\\/\\/starter\\/\"]', 1, '2021-09-11 14:36:02', '2021-09-11 14:36:02'),
+(24, 404, 'http://starter/themes/starter/assets/images/b1.jpg', '[\"http:\\/\\/starter\\/\"]', 1, '2021-09-11 14:36:02', '2021-09-11 14:36:02'),
+(25, 404, 'http://starter/themes/starter/assets/images/b7.jpg', '[\"http:\\/\\/starter\\/\"]', 1, '2021-09-11 14:36:02', '2021-09-11 14:36:02'),
+(26, 404, 'http://starter/themes/starter/assets/images/b6.jpg', '[\"http:\\/\\/starter\\/\"]', 1, '2021-09-11 14:36:02', '2021-09-11 14:36:02');
 
 -- --------------------------------------------------------
 
@@ -1078,7 +1083,7 @@ INSERT INTO `system_settings` (`id`, `item`, `value`) VALUES
 (3, 'saurabhdhariwal_comments_settings', '{\"allow_guest\":\"1\",\"status\":\"1\",\"recaptcha_enabled\":\"0\",\"site_key\":\"\",\"secret_key\":\"\"}'),
 (4, 'system_mail_settings', '{\"send_mode\":\"smtp\",\"sender_name\":\"Ceterra\",\"sender_email\":\"mail@ceterra.ru\",\"sendmail_path\":\"\\/usr\\/sbin\\/sendmail -bs\",\"smtp_address\":\"smtp.yandex.ru\",\"smtp_port\":\"465\",\"smtp_user\":\"mail@ceterra.ru\",\"smtp_password\":\"7vTk-!XX\",\"smtp_authorization\":\"1\",\"smtp_encryption\":\"ssl\",\"mailgun_domain\":\"\",\"mailgun_secret\":\"\",\"mandrill_secret\":\"\",\"ses_key\":\"\",\"ses_secret\":\"\",\"ses_region\":\"\",\"sparkpost_secret\":\"\"}'),
 (5, 'user_settings', '{\"require_activation\":\"1\",\"activate_mode\":\"user\",\"use_throttle\":\"1\",\"block_persistence\":\"0\",\"allow_registration\":\"1\",\"login_attribute\":\"email\",\"remember_login\":\"always\",\"use_register_throttle\":\"1\"}'),
-(6, 'backend_brand_settings', '{\"app_name\":\"Starter\",\"app_tagline\":\"I\'m free!\",\"primary_color\":\"#34495e\",\"secondary_color\":\"#e67e22\",\"accent_color\":\"#3498db\",\"menu_mode\":\"inline\",\"custom_css\":\"\"}');
+(6, 'backend_brand_settings', '{\"app_name\":\"Starter\",\"app_tagline\":\"I\'m free!\",\"primary_color\":\"#34495e\",\"secondary_color\":\"#e67e22\",\"accent_color\":\"#3498db\",\"menu_mode\":\"inline\",\"custom_css\":\"a:focus {outline: none;}\\r\\n.ace_editor#MarkdownEditor-formContentHtml-content_html-code {min-height: 348px;}\\r\\n.ace_editor.ace_dark {font-size:15px; line-height:1.4!important; font-family:\'Menlo\',\'PT Mono\',\'Ubuntu Mono\',monospace!important}\\r\\n.ace_editor.ace_dark .ace_meta.ace_tag{color:#808080!important} \\/* < \\u043e\\u0431\\u0435\\u0440\\u0442\\u043a\\u0430 \\u0442\\u0435\\u0433\\u043e\\u0432 > *\\/\\r\\n.ace_editor.ace_dark .ace_operator {color:#808080!important} \\/* < \\u043e\\u043f\\u0435\\u0440\\u0430\\u0442\\u043e\\u0440 > *\\/\\r\\n.ace_editor.ace_dark .ace_meta.ace_tag.ace_tag-name{color:#569CD6!important} \\/* \\u0442\\u0435\\u0433\\u0438 *\\/\\r\\n.ace_editor.ace_dark .ace_string{color:#CE9178!important} \\/* \\u0441\\u0435\\u043b\\u0435\\u043a\\u0442\\u043e\\u0440\\u044b *\\/\\r\\n.ace_editor.ace_dark .ace_entity.ace_other.ace_attribute-name{color:#9CDCFE!important} \\/* \\u0430\\u0442\\u0440\\u0438\\u0431\\u0443\\u0442\\u044b *\\/\\r\\n.ace_editor.ace_dark .ace_variable.ace_other.ace_readwrite{color:#8299B3!important} \\/* \\u043a\\u0430\\u0432\\u044b\\u0447\\u043a\\u0438 \\u0444\\u0438\\u0433\\u0443\\u0440\\u043d\\u044b\\u0435 *\\/\\r\\n.ace_editor.ace_dark .ace_gutter{color:#666E79!important}\\r\\n.ace_editor.ace_dark .ace_text {color:#BDBDBD!important} \\/* \\u0442\\u0435\\u043a\\u0441\\u0442 *\\/\\r\\n.ace_editor.ace_dark .ace_identifier {color:#DCDCAA!important} \\/* \\u0442\\u0435\\u0433\\u0438 \\u0442\\u0432\\u0438\\u0433 \\u0440\\u0430\\u0437\\u043c\\u0435\\u0442\\u043a\\u0438*\\/\\r\\n.ace_editor.ace_dark .ace_comment {color:#6A9955!important} \\/* \\u043a\\u043e\\u043c\\u043c\\u0435\\u043d\\u0442\\u0430\\u0440\\u0438\\u0438 *\\/\\r\\n.ace_editor.ace_dark .ace_active-line,.ace_gutter-active-line{background-color:#282828!important} \\/* \\u043f\\u043e\\u0434\\u0441\\u0432\\u0435\\u0442\\u043a\\u0430 \\u0441\\u0442\\u0440\\u043e\\u043a\\u0438 *\\/\\r\\n.ace_editor.ace_dark .ace_scroller,.ace_gutter {background-color:#1E1E1E!important} \\/* \\u0444\\u043e\\u043d *\\/\\r\\n\\r\\n.field-mediafinder.style-image-single .find-object .icon-container, .field-mediafinder.style-image-single .find-object .info, .field-mediafinder.style-image-single .find-object .icon-container img {max-width: 200px}\\r\\nnav#layout-mainmenu.navbar-mode-inline ul.mainmenu-nav li a .nav-icon > * {max-width: 24px;font-size: 24px}\"}');
 
 -- --------------------------------------------------------
 
@@ -1101,8 +1106,8 @@ INSERT INTO `vdomah_blogviews_views` (`views`, `post_id`) VALUES
 (56, 3),
 (46, 4),
 (35, 5),
-(28, 6),
-(20, 7);
+(29, 6),
+(21, 7);
 
 --
 -- Индексы сохранённых таблиц
@@ -1378,7 +1383,7 @@ ALTER TABLE `vdomah_blogviews_views`
 -- AUTO_INCREMENT для таблицы `backend_access_log`
 --
 ALTER TABLE `backend_access_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT для таблицы `backend_users`
@@ -1540,7 +1545,7 @@ ALTER TABLE `system_plugin_versions`
 -- AUTO_INCREMENT для таблицы `system_request_logs`
 --
 ALTER TABLE `system_request_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT для таблицы `system_revisions`

@@ -1,9 +1,9 @@
-# Starter Template
+# Starter Template October CMS
 
-_Revision 1.1.0 from 05.09.2021_
+_Revision 1.1.1 from 2021.10.07_
 
 > Starter Template by pasmurno<br>
-> Based on OctoberCMS. SASS/SCSS. Gulp. Webpack and module JS. Bootstrap. Bootstrap-Icons.
+> Based on October CMS. SASS/SCSS. Gulp. Webpack and module JS. Bootstrap. Bootstrap-Icons. Photoswipe.
 
 ---
 

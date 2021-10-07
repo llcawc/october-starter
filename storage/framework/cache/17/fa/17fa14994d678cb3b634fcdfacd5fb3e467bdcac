@@ -1,0 +1,23 @@
+1633639660a:1:{s:7:"404.htm";a:9:{s:8:"fileName";s:7:"404.htm";s:7:"content";s:375:"title = 404
+url = "/404"
+layout = "flat"
+is_hidden = 0
+==
+<div class="container">
+  <div class="row justify-content-center">
+    <section class="col-8 col-md-6">
+      <h3 class="textcolor">Error 404!</h3>
+      <p>Document not found.</p>
+      <a class="btn btn-outline-secondary" href="{{ 'home'|page }}"><i class="bi bi-house"></i> Home</a>
+    </section>
+  </div>
+</div>
+";s:5:"mtime";i:1629738000;s:6:"markup";s:316:"<div class="container">
+  <div class="row justify-content-center">
+    <section class="col-8 col-md-6">
+      <h3 class="textcolor">Error 404!</h3>
+      <p>Document not found.</p>
+      <a class="btn btn-outline-secondary" href="{{ 'home'|page }}"><i class="bi bi-house"></i> Home</a>
+    </section>
+  </div>
+</div>";s:4:"code";N;s:5:"title";s:3:"404";s:3:"url";s:4:"/404";s:6:"layout";s:4:"flat";s:9:"is_hidden";s:1:"0";}}

@@ -1,10 +1,11 @@
 {
-  "name": "starter",
-  "version": "1.1.0",
+  "name": "starter-october",
+  "version": "1.1.1",
+  "date": "2021.10.07",
   "homepage": "https://github.com/llcawc",
   "license": "MIT",
   "author": "pasmurno by llcawc",
-  "description": "October/Winter CMS mockup starter template by pasmurno",
+  "description": "October CMS mockup starter template by pasmurno",
   "keywords": [
     "mockup",
     "starter",
@@ -17,26 +18,16 @@
     "type": "git",
     "url": "https://github.com/llcawc/starter.git"
   },
-  "main": "index.js",
-  "type": "module",
+  "main": "gulpfile.mjs",
   "scripts": {
     "dev": "gulp",
     "build": "gulp build",
     "deploy": "gulp deploy"
   },
-  "browserslist": [
-    "last 2 major versions",
-    "> 1%",
-    "Firefox ESR",
-    "iOS >= 12",
-    "Safari >= 12",
-    "not Explorer <= 11",
-    "not dead"
-  ],
   "devDependencies": {
-    "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.15.6",
-    "autoprefixer": "^10.3.4",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "autoprefixer": "^10.3.7",
     "babel-loader": "^8.2.2",
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-root-import": "^6.6.0",
@@ -55,15 +46,15 @@
     "gulp-sass": "^5.0.0",
     "gulp-sass-glob": "^1.1.0",
     "gulp-sourcemaps": "^3.0.0",
-    "postcss": "^8.3.6",
-    "sass": "^1.39.2",
+    "postcss": "^8.3.9",
+    "sass": "^1.42.1",
     "terser-webpack-plugin": "^5.2.4",
-    "webpack": "^5.52.1",
+    "webpack": "^5.58.0",
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "@popperjs/core": "^2.10.1",
-    "bootstrap": "^5.1.1",
+    "@popperjs/core": "^2.10.2",
+    "bootstrap": "^5.1.2",
     "bootstrap-icons": "^1.5.0",
     "jquery": "^3.6.0",
     "photoswipe": "git://github.com/dimsemenov/photoswipe.git#v5-beta"
