@@ -21,6 +21,7 @@
   "main": "gulpfile.mjs",
   "scripts": {
     "dev": "gulp",
+    "serve": "gulp serve",
     "build": "gulp build",
     "deploy": "gulp deploy"
   },
