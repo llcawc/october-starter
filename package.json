@@ -2,21 +2,17 @@
   "name": "starter-october",
   "version": "1.1.1",
   "date": "2021.10.07",
-  "homepage": "https://github.com/llcawc",
-  "license": "MIT",
   "author": "pasmurno by llcawc",
+  "homepage": "https://github.com/llcawc",
   "description": "October CMS mockup starter template by pasmurno",
   "keywords": [
-    "mockup",
     "starter",
     "template",
-    "back-end",
-    "OctoberCMS",
-    "WinterCMS"
+    "OctoberCMS"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/llcawc/starter.git"
+    "url": "https://github.com/llcawc/starter-october.git"
   },
   "main": "gulpfile.mjs",
   "scripts": {
@@ -38,8 +34,6 @@
     "gulp": "^4.0.2",
     "gulp-imagemin": "^8.0.0",
     "gulp-newer": "^1.4.0",
-    "gulp-notify": "^4.0.0",
-    "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
     "gulp-purgecss": "^4.0.3",
     "gulp-rename": "^2.0.0",

@@ -3,9 +3,9 @@
 
 // VARIABLES & PATHS
 
-let localhost = 'starter-october', // Local domain
+let localhost = 'starter-october', // Local domen
   theme = 'starter', // Theme folder name
-  fileswatch = 'html,htm,php,txt,yaml,twig,json,md,woff2' // List of files extensions for watching & hard reload (comma separated)
+  fileswatch = 'html,htm,php,txt,json,md,woff2' // List of files extensions for watching & hard reload (comma separated)
 
 let paths = {
   scripts: {
@@ -32,12 +32,12 @@ let paths = {
       'node_modules/photoswipe/dist/photoswipe.css',
       'node_modules/bootstrap/scss/_reboot.scss',
       'node_modules/bootstrap/js/dist/dom/*.js',
-      'node_modules/bootstrap/js/dist/{base-component,button,dropdown,collapse}.js',
+      'node_modules/bootstrap/js/dist/{base-component,alert,button,carousel,modal,tooltip,popover}.js',
     ],
     safelist: {
       // standart: ["selectorname"],
       deep: [/scrolltotop$/],
-      greedy: [/on$/, /down$/, /is-hidden$/],
+      greedy: [/on$/, /down$/, /is-hidden$/, /success$/, /danger$/, /warning$/],
     },
     keyframes: true,
   },
@@ -76,7 +76,6 @@ let paths = {
 }
 
 // LOGIC
-
 import gulp from 'gulp'
 const { src, dest, parallel, series, watch } = gulp
 import brSync from 'browser-sync'
@@ -94,9 +93,9 @@ import postCss from 'gulp-postcss'
 import cssnano from 'cssnano'
 import autoprefixer from 'autoprefixer'
 import imagemin from 'gulp-imagemin'
-import rename from 'gulp-rename'
 import newer from 'gulp-newer'
 import rsync from 'gulp-rsync'
+import rename from 'gulp-rename'
 import del from 'del'
 
 function browsersync() {
@@ -215,7 +214,6 @@ function css() {
     .pipe(sourcemaps.init())
     .pipe(sassglob())
     .pipe(sass({ 'include css': true }))
-    .pipe(purgecss(paths.purge))
     .pipe(
       postCss([
         autoprefixer({ grid: 'autoplace' }),
@@ -278,11 +276,11 @@ function clean() {
 
 function startwatch() {
   watch(`themes/${theme}/assets/sass/**/*`, { usePolling: true }, css)
-  watch([`themes/${theme}/assets/js/**/*.js`, `!themes/${theme}/assets/js/*.min.js`], { usePolling: true }, js)
-  watch([`themes/${theme}/**/*.{${fileswatch}}`, `plugins/**/*.{${fileswatch}}`], { usePolling: true }).on('change', browserSync.reload)
+  watch(`themes/${theme}/assets/js/**/*.js`, { usePolling: true }, js)
+  watch(`themes/${theme}/**/*.{${fileswatch}}`, { usePolling: true }).on('change', browserSync.reload)
 }
 
-export { js, scripts, css, styles, images, deploy }
-export let build = series(clean, scripts, styles)
+export { clean, js, scripts, css, styles, images, deploy }
+export let build = series(clean, images, scripts, styles)
 export let serve = parallel(browsersync, startwatch)
-export default series(js, css, serve)
+export default series(clean, images, js, css, serve)
