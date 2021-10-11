@@ -1,5 +1,5 @@
 // _config.scss
-@use "sass:math";
+@use 'sass:math';
 
 // USER VARIABLES SECTION
 
@@ -13,11 +13,11 @@ $userfont: awcOpenSans, sans-serif;
 // IMPORT SECTION
 
 // BOOTSTRAP
-@import "bootstrap";
-@import "bootstrap-icons";
+@import 'bootstrap';
+@import '../vendor/bootstrap-icons/bootstrap-icons-custom';
 
 // IMPORT SECTION VENDOR LIBRARIUM
-@import "node_modules/photoswipe/dist/photoswipe";
+@import 'node_modules/photoswipe/dist/photoswipe';
 
 // FONTS LOAD SECTION
 @mixin font($fname, $fstyle, $fweight, $furl) {
@@ -25,16 +25,16 @@ $userfont: awcOpenSans, sans-serif;
     font-family: $fname;
     font-style: $fstyle;
     font-weight: $fweight;
-    src: url($furl) format("woff2");
+    src: url($furl) format('woff2');
   }
 }
 
-@include font("awcOpenSans", normal, 300, "../fonts/open-sans-300.woff2");
-@include font("awcOpenSans", italic, 300, "../fonts/open-sans-300italic.woff2");
-@include font("awcOpenSans", normal, 400, "../fonts/open-sans-regular.woff2");
-@include font("awcOpenSans", italic, 400, "../fonts/open-sans-italic.woff2");
-@include font("awcOpenSans", normal, 700, "../fonts/open-sans-700.woff2");
-@include font("awcOpenSans", italic, 700, "../fonts/open-sans-700italic.woff2");
+@include font('awcOpenSans', normal, 300, '../fonts/open-sans-300.woff2');
+@include font('awcOpenSans', italic, 300, '../fonts/open-sans-300italic.woff2');
+@include font('awcOpenSans', normal, 400, '../fonts/open-sans-regular.woff2');
+@include font('awcOpenSans', italic, 400, '../fonts/open-sans-italic.woff2');
+@include font('awcOpenSans', normal, 700, '../fonts/open-sans-700.woff2');
+@include font('awcOpenSans', italic, 700, '../fonts/open-sans-700italic.woff2');
 
 // GENERAL PROJECT STYLES
 

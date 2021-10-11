@@ -1,4 +1,4 @@
-1633736918a:1:{s:8:"flat.htm";a:6:{s:8:"fileName";s:8:"flat.htm";s:7:"content";s:833:"description = "Flat layout"
+1633983916a:1:{s:8:"flat.htm";a:6:{s:8:"fileName";s:8:"flat.htm";s:7:"content";s:808:"description = "Flat layout"
 ==
 <!DOCTYPE html>
 <html lang="ru">
@@ -24,7 +24,8 @@
 
 </body>
 
-</html>";s:5:"mtime";i:1629738000;s:6:"markup";s:800:"<!DOCTYPE html>
+</html>
+";s:5:"mtime";i:1633982140;s:6:"markup";s:776:"<!DOCTYPE html>
 <html lang="ru">
 
 <head>

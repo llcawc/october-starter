@@ -1,4 +1,4 @@
-1633736912a:1:{s:11:"default.htm";a:6:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:875:"description = "Default layout"
+1633984001a:1:{s:11:"default.htm";a:6:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:961:"description = "Default layout"
 ==
 <!DOCTYPE html>
 <html lang="ru">
@@ -10,7 +10,7 @@
   <meta name="title" content="{{ this.page.meta_title }}">
   <meta name="description" content="{{ this.page.meta_description }}">
   <meta name="author" content="llcawc by pasmurno">
-  <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+  <link rel="icon" type="image/png" href="{{ 'assets/images/favicon.png'|theme }}">
   <meta property="og:image" content="{{'assets/images/preview.jpg'|theme}}">
   {% styles %}
   <link rel="stylesheet" href="{{ 'assets/css/main.min.css'|theme }}" />
@@ -23,13 +23,15 @@
   {% partial 'footer' %}
 
   <!-- Scripts -->
+  <script src="{{ 'assets/js/lib.min.js'|theme }}"></script>
   <script src="{{ 'assets/js/app.min.js'|theme }}"></script>
+  {% framework extras %}
   {% scripts %}
 
 </body>
 
 </html>
-";s:5:"mtime";i:1633079278;s:6:"markup";s:840:"<!DOCTYPE html>
+";s:5:"mtime";i:1633982081;s:6:"markup";s:926:"<!DOCTYPE html>
 <html lang="ru">
 
 <head>
@@ -39,7 +41,7 @@
   <meta name="title" content="{{ this.page.meta_title }}">
   <meta name="description" content="{{ this.page.meta_description }}">
   <meta name="author" content="llcawc by pasmurno">
-  <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+  <link rel="icon" type="image/png" href="{{ 'assets/images/favicon.png'|theme }}">
   <meta property="og:image" content="{{'assets/images/preview.jpg'|theme}}">
   {% styles %}
   <link rel="stylesheet" href="{{ 'assets/css/main.min.css'|theme }}" />
@@ -52,7 +54,9 @@
   {% partial 'footer' %}
 
   <!-- Scripts -->
+  <script src="{{ 'assets/js/lib.min.js'|theme }}"></script>
   <script src="{{ 'assets/js/app.min.js'|theme }}"></script>
+  {% framework extras %}
   {% scripts %}
 
 </body>

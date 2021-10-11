@@ -1,4 +1,4 @@
-1633736912a:1:{s:17:"blog/category.htm";a:12:{s:8:"fileName";s:17:"blog/category.htm";s:7:"content";s:767:"title = "Blog Category"
+1633984000a:1:{s:17:"blog/category.htm";a:12:{s:8:"fileName";s:17:"blog/category.htm";s:7:"content";s:767:"title = "Blog Category"
 url = "/blog/category/:slug/:page?"
 layout = "default"
 description = "Viewing blog posts in a specific category."
@@ -30,7 +30,7 @@ postPage = "blog/post"
     </div>
   </div>
 </section>
-";s:5:"mtime";i:1629738000;s:6:"markup";s:296:"<section class="container">
+";s:5:"mtime";i:1633870060;s:6:"markup";s:296:"<section class="container">
   <div class="row">
     <div class="col-md-4">
       <h2 class="spacing">Category</h2>

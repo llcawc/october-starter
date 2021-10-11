@@ -1,4 +1,4 @@
-1633736912a:1:{s:13:"blog/post.htm";a:12:{s:8:"fileName";s:13:"blog/post.htm";s:7:"content";s:2874:"title = "Post"
+1633984000a:1:{s:13:"blog/post.htm";a:12:{s:8:"fileName";s:13:"blog/post.htm";s:7:"content";s:2874:"title = "Post"
 url = "/blog/post/:slug"
 layout = "default"
 description = "One post"
@@ -84,7 +84,7 @@ function onEnd()
   </div>
 
 </div>
-";s:5:"mtime";i:1631043890;s:6:"markup";s:2500:"{% set mnths = ['','января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'] %}
+";s:5:"mtime";i:1633870060;s:6:"markup";s:2500:"{% set mnths = ['','января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'] %}
 {% set days = ['','Понедельник','Вторник','Среда','Четверг','Пятница', 'Суббота', 'Воскресенье'] %}
 {% set nextPost = blogPost.nextPost %}
 {% set prevPost = blogPost.previousPost %}

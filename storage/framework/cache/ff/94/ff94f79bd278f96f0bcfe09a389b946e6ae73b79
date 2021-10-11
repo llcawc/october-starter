@@ -1,4 +1,4 @@
-1633736912a:1:{s:8:"blog.htm";a:13:{s:8:"fileName";s:8:"blog.htm";s:7:"content";s:3232:"title = "Blog"
+1633984000a:1:{s:8:"blog.htm";a:13:{s:8:"fileName";s:8:"blog.htm";s:7:"content";s:3232:"title = "Blog"
 url = "/blog/:page?"
 layout = "default"
 description = "Blog Caffee"
@@ -84,7 +84,7 @@ postPage = "blog/post"
 
   </div>
 </main>
-";s:5:"mtime";i:1630866678;s:6:"markup";s:2845:"{% set posts = blogPosts.posts %}
+";s:5:"mtime";i:1633870060;s:6:"markup";s:2845:"{% set posts = blogPosts.posts %}
 {% set mnths = ['','января','февраля','марта','апреля','мая','июня','июля','августа', 'сентября','октября','ноября','декабря'] %}
 {% set days = ['','Понедельник','Вторник','Среда','Четверг','Пятница', 'Суббота', 'Воскресенье'] %}
 

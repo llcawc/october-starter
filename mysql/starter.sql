@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 02 2021 г., 18:18
+-- Время создания: Окт 11 2021 г., 22:28
 -- Версия сервера: 5.7.33
 -- Версия PHP: 7.4.21
 
@@ -606,13 +606,6 @@ CREATE TABLE `system_event_logs` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Дамп данных таблицы `system_event_logs`
---
-
-INSERT INTO `system_event_logs` (`id`, `level`, `message`, `details`, `created_at`, `updated_at`) VALUES
-(1, 'error', 'Twig\\Error\\SyntaxError: Unknown \"row\" filter. Did you mean \"raw\" in \"C:\\Disk\\webwork\\starter/themes/starter/pages/blog/post.htm\" at line 33? in C:\\Disk\\webwork\\starter\\vendor\\twig\\twig\\src\\ExpressionParser.php:788\nStack trace:\n#0 C:\\Disk\\webwork\\starter\\vendor\\twig\\twig\\src\\ExpressionParser.php(563): Twig\\ExpressionParser->getFilterNodeClass()\n#1 C:\\Disk\\webwork\\starter\\vendor\\twig\\twig\\src\\ExpressionParser.php(548): Twig\\ExpressionParser->parseFilterExpressionRaw()\n#2 C:\\Disk\\webwork\\starter\\vendor\\twig\\twig\\src\\ExpressionParser.php(406): Twig\\ExpressionParser->parseFilterExpression()\n#3 C:\\Disk\\webwork\\starter\\vendor\\twig\\twig\\src\\ExpressionParser.php(289): Twig\\ExpressionParser->parsePostfixExpression()\n#4 C:\\Disk\\webwork\\starter\\vendor\\twig\\twig\\src\\ExpressionParser.php(175): Twig\\ExpressionParser->parsePrimaryExpression()\n#5 C:\\Disk\\webwork\\starter\\vendor\\twig\\twig\\src\\ExpressionParser.php(70): Twig\\ExpressionParser->getPrimary()\n#6 C:\\Disk\\webwork\\starter\\vendor\\twig\\twig\\src\\Parser.php(142): Twig\\ExpressionParser->parseExpression()\n#7 C:\\Disk\\webwork\\starter\\vendor\\twig\\twig\\src\\TokenParser\\IfTokenParser.php(39): Twig\\Parser->subparse()\n#8 C:\\Disk\\webwork\\starter\\vendor\\twig\\twig\\src\\Parser.php(185): Twig\\TokenParser\\IfTokenParser->parse()\n#9 C:\\Disk\\webwork\\starter\\vendor\\twig\\twig\\src\\Parser.php(98): Twig\\Parser->subparse()\n#10 C:\\Disk\\webwork\\starter\\vendor\\twig\\twig\\src\\Environment.php(563): Twig\\Parser->parse()\n#11 C:\\Disk\\webwork\\starter\\vendor\\twig\\twig\\src\\Environment.php(595): Twig\\Environment->parse()\n#12 C:\\Disk\\webwork\\starter\\vendor\\twig\\twig\\src\\Environment.php(408): Twig\\Environment->compileSource()\n#13 C:\\Disk\\webwork\\starter\\vendor\\twig\\twig\\src\\Environment.php(381): Twig\\Environment->loadClass()\n#14 C:\\Disk\\webwork\\starter\\modules\\cms\\classes\\Controller.php(424): Twig\\Environment->loadTemplate()\n#15 C:\\Disk\\webwork\\starter\\modules\\cms\\classes\\Controller.php(225): Cms\\Classes\\Controller->runPage()\n#16 C:\\Disk\\webwork\\starter\\modules\\cms\\classes\\CmsController.php(50): Cms\\Classes\\Controller->run()\n#17 [internal function]: Cms\\Classes\\CmsController->run()\n#18 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array()\n#19 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction()\n#20 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(212): Illuminate\\Routing\\ControllerDispatcher->dispatch()\n#21 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(169): Illuminate\\Routing\\Route->runController()\n#22 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Route->run()\n#23 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}()\n#24 C:\\Disk\\webwork\\starter\\plugins\\rainlab\\translate\\classes\\LocaleMiddleware.php(29): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()\n#25 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(149): RainLab\\Translate\\Classes\\LocaleMiddleware->handle()\n#26 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()\n#27 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()\n#28 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(149): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle()\n#29 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()\n#30 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()\n#31 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(149): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle()\n#32 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()\n#33 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(63): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()\n#34 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(149): Illuminate\\Session\\Middleware\\StartSession->handle()\n#35 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()\n#36 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()\n#37 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(149): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle()\n#38 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()\n#39 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(68): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()\n#40 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(149): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle()\n#41 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()\n#42 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(102): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()\n#43 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(660): Illuminate\\Pipeline\\Pipeline->then()\n#44 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(635): Illuminate\\Routing\\Router->runRouteWithinStack()\n#45 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(601): Illuminate\\Routing\\Router->runRoute()\n#46 C:\\Disk\\webwork\\starter\\vendor\\october\\rain\\src\\Router\\CoreRouter.php(20): Illuminate\\Routing\\Router->dispatchToRoute()\n#47 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): October\\Rain\\Router\\CoreRouter->dispatch()\n#48 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}()\n#49 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(46): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()\n#50 C:\\Disk\\webwork\\starter\\vendor\\october\\rain\\src\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(25): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()\n#51 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(149): October\\Rain\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle()\n#52 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()\n#53 C:\\Disk\\webwork\\starter\\vendor\\october\\rain\\src\\Http\\Middleware\\TrustHosts.php(46): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()\n#54 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(149): October\\Rain\\Http\\Middleware\\TrustHosts->handle()\n#55 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}()\n#56 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(102): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}()\n#57 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then()\n#58 C:\\Disk\\webwork\\starter\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()\n#59 C:\\Disk\\webwork\\starter\\index.php(43): Illuminate\\Foundation\\Http\\Kernel->handle()\n#60 {main}', NULL, '2021-09-05 15:21:07', '2021-09-05 15:21:07');
-
 -- --------------------------------------------------------
 
 --
@@ -767,7 +760,7 @@ INSERT INTO `system_parameters` (`id`, `namespace`, `group`, `item`, `value`) VA
 (1, 'system', 'update', 'count', '0'),
 (2, 'system', 'core', 'hash', '\"652ebd026445ccaeb3ba083f00830dc0\"'),
 (3, 'system', 'core', 'build', '\"473\"'),
-(4, 'system', 'update', 'retry', '1633165369'),
+(4, 'system', 'update', 'retry', '1634054401'),
 (5, 'system', 'theme', 'history', '[]'),
 (6, 'cms', 'theme', 'active', '\"starter\"');
 
@@ -1010,38 +1003,6 @@ CREATE TABLE `system_request_logs` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Дамп данных таблицы `system_request_logs`
---
-
-INSERT INTO `system_request_logs` (`id`, `status_code`, `url`, `referer`, `count`, `created_at`, `updated_at`) VALUES
-(1, 404, 'http://starter/assets/images/b3.jpg', '[\"http:\\/\\/starter\\/\"]', 5, '2021-08-23 14:28:52', '2021-08-23 14:29:18'),
-(2, 404, 'http://starter/404', NULL, 1, '2021-08-23 14:35:36', '2021-08-23 14:35:36'),
-(3, 404, 'http://starter/favicon.ico', '[\"http:\\/\\/starter\\/themes\\/starter\\/assets\\/images\\/b2.jpg\"]', 38, '2021-09-04 17:16:36', '2021-09-20 11:27:41'),
-(4, 404, 'http://starter/themes/terra/assets/images/preview.jpg', '[\"http:\\/\\/localhost:3000\\/\"]', 9, '2021-09-05 13:53:06', '2021-09-05 14:00:50'),
-(5, 404, 'http://starter/image', '[\"http:\\/\\/localhost:3000\\/blog\"]', 1, '2021-09-05 14:52:39', '2021-09-05 14:52:39'),
-(6, 404, 'http://starter/blog/post/image', '[\"http:\\/\\/localhost:3000\\/blog\\/post\\/subektivnyj-genij-metodologiya-i-osobennosti\"]', 1, '2021-09-05 14:52:45', '2021-09-05 14:52:45'),
-(7, 404, 'http://starter/blog/post/%7B%22id%22:25,%22disk_name%22:%226123c811ced60781443316.jpg%22,%22file_name%22:%22b1.jpg%22,%22file_size%22:367248,%22content_type%22:%22image/jpeg%22,%22title%22:%2', '[\"http:\\/\\/localhost:3000\\/blog\\/post\\/subektivnyj-genij-metodologiya-i-osobennosti\"]', 4, '2021-09-05 15:17:01', '2021-09-05 15:21:15'),
-(8, 404, 'http://starter/blog/post/[%7B%22id%22:20,%22disk_name%22:%2261236f089dfb5177766025.jpg%22,%22file_name%22:%22b1.jpg%22,%22file_size%22:367248,%22content_type%22:%22image/jpeg%22,%22title%22:%', '[\"http:\\/\\/localhost:3000\\/blog\\/post\\/subektivnyj-genij-metodologiya-i-osobennosti\"]', 1, '2021-09-05 15:19:33', '2021-09-05 15:19:33'),
-(9, 404, 'http://starter/themes/starter/assets/js/dropdown.js.map', NULL, 69, '2021-09-06 17:44:34', '2021-09-07 15:25:49'),
-(10, 404, 'http://starter/themes/starter/assets/vendor/photoswipe/photoswipe-ui', '[\"http:\\/\\/starter\\/\"]', 2, '2021-09-07 09:53:28', '2021-09-07 09:54:00'),
-(11, 404, 'http://starter/themes/starter/assets/js/photoswipe.esm.js.map', NULL, 71, '2021-09-07 15:29:18', '2021-09-07 16:51:33'),
-(12, 404, 'http://starter/themes/starter/assets/css/node_modules/photoswipe/dist/photoswipe.css', '[\"http:\\/\\/localhost:3000\\/themes\\/starter\\/assets\\/css\\/main.min.css?browsersync=1631040046665\"]', 1, '2021-09-07 15:40:46', '2021-09-07 15:40:46'),
-(13, 404, 'http://starter/node_modules/photoswipe/dist/photoswipe.css', '[\"http:\\/\\/localhost:3000\\/themes\\/starter\\/assets\\/css\\/main.min.css?browsersync=1631040058377\"]', 14, '2021-09-07 15:40:58', '2021-09-07 15:53:15'),
-(14, 404, 'http://starter/themes/starter/assets/images/thumb/b4-640x400.jpg', '[\"http:\\/\\/starter\\/\"]', 2, '2021-09-11 14:35:49', '2021-09-11 14:35:55'),
-(15, 404, 'http://starter/themes/starter/assets/images/thumb/b3-640x400.jpg', '[\"http:\\/\\/starter\\/\"]', 2, '2021-09-11 14:35:49', '2021-09-11 14:35:55'),
-(16, 404, 'http://starter/themes/starter/assets/images/preview.jpg', '[\"http:\\/\\/starter\\/\"]', 4, '2021-09-11 14:35:49', '2021-09-11 14:37:03'),
-(17, 404, 'http://starter/themes/starter/assets/images/thumb/b1-640x400.jpg', '[\"http:\\/\\/starter\\/\"]', 2, '2021-09-11 14:35:49', '2021-09-11 14:35:55'),
-(18, 404, 'http://starter/themes/starter/assets/images/thumb/b2-640x400.jpg', '[\"http:\\/\\/starter\\/\"]', 2, '2021-09-11 14:35:49', '2021-09-11 14:35:55'),
-(19, 404, 'http://starter/themes/starter/assets/images/thumb/b5-640x400.jpg', '[\"http:\\/\\/starter\\/\"]', 3, '2021-09-11 14:35:49', '2021-09-11 14:36:02'),
-(20, 404, 'http://starter/themes/starter/assets/images/thumb/b6-640x400.jpg', '[\"http:\\/\\/starter\\/\"]', 2, '2021-09-11 14:35:49', '2021-09-11 14:35:55'),
-(21, 404, 'http://starter/themes/starter/assets/images/thumb/b7-640x400.jpg', '[\"http:\\/\\/starter\\/\"]', 2, '2021-09-11 14:35:49', '2021-09-11 14:35:55'),
-(22, 404, 'http://starter/themes/starter/assets/images/favicon.png', '[\"http:\\/\\/starter\\/\"]', 2, '2021-09-11 14:35:50', '2021-09-11 14:35:55'),
-(23, 404, 'http://starter/themes/starter/assets/images/b5.jpg', '[\"http:\\/\\/starter\\/\"]', 1, '2021-09-11 14:36:02', '2021-09-11 14:36:02'),
-(24, 404, 'http://starter/themes/starter/assets/images/b1.jpg', '[\"http:\\/\\/starter\\/\"]', 1, '2021-09-11 14:36:02', '2021-09-11 14:36:02'),
-(25, 404, 'http://starter/themes/starter/assets/images/b7.jpg', '[\"http:\\/\\/starter\\/\"]', 1, '2021-09-11 14:36:02', '2021-09-11 14:36:02'),
-(26, 404, 'http://starter/themes/starter/assets/images/b6.jpg', '[\"http:\\/\\/starter\\/\"]', 1, '2021-09-11 14:36:02', '2021-09-11 14:36:02');
-
 -- --------------------------------------------------------
 
 --
@@ -1081,9 +1042,9 @@ INSERT INTO `system_settings` (`id`, `item`, `value`) VALUES
 (1, 'system_log_settings', '{\"log_events\":\"1\",\"log_requests\":\"1\",\"log_theme\":\"1\"}'),
 (2, 'cms_maintenance_settings', '{\"is_enabled\":\"1\",\"cms_page\":\"nobody.htm\",\"theme_map\":{\"demo\":\"hello.htm\",\"caffee\":\"nobody.htm\"}}'),
 (3, 'saurabhdhariwal_comments_settings', '{\"allow_guest\":\"1\",\"status\":\"1\",\"recaptcha_enabled\":\"0\",\"site_key\":\"\",\"secret_key\":\"\"}'),
-(4, 'system_mail_settings', '{\"send_mode\":\"smtp\",\"sender_name\":\"Ceterra\",\"sender_email\":\"mail@ceterra.ru\",\"sendmail_path\":\"\\/usr\\/sbin\\/sendmail -bs\",\"smtp_address\":\"smtp.yandex.ru\",\"smtp_port\":\"465\",\"smtp_user\":\"mail@ceterra.ru\",\"smtp_password\":\"7vTk-!XX\",\"smtp_authorization\":\"1\",\"smtp_encryption\":\"ssl\",\"mailgun_domain\":\"\",\"mailgun_secret\":\"\",\"mandrill_secret\":\"\",\"ses_key\":\"\",\"ses_secret\":\"\",\"ses_region\":\"\",\"sparkpost_secret\":\"\"}'),
 (5, 'user_settings', '{\"require_activation\":\"1\",\"activate_mode\":\"user\",\"use_throttle\":\"1\",\"block_persistence\":\"0\",\"allow_registration\":\"1\",\"login_attribute\":\"email\",\"remember_login\":\"always\",\"use_register_throttle\":\"1\"}'),
-(6, 'backend_brand_settings', '{\"app_name\":\"Starter\",\"app_tagline\":\"I\'m free!\",\"primary_color\":\"#34495e\",\"secondary_color\":\"#e67e22\",\"accent_color\":\"#3498db\",\"menu_mode\":\"inline\",\"custom_css\":\"a:focus {outline: none;}\\r\\n.ace_editor#MarkdownEditor-formContentHtml-content_html-code {min-height: 348px;}\\r\\n.ace_editor.ace_dark {font-size:15px; line-height:1.4!important; font-family:\'Menlo\',\'PT Mono\',\'Ubuntu Mono\',monospace!important}\\r\\n.ace_editor.ace_dark .ace_meta.ace_tag{color:#808080!important} \\/* < \\u043e\\u0431\\u0435\\u0440\\u0442\\u043a\\u0430 \\u0442\\u0435\\u0433\\u043e\\u0432 > *\\/\\r\\n.ace_editor.ace_dark .ace_operator {color:#808080!important} \\/* < \\u043e\\u043f\\u0435\\u0440\\u0430\\u0442\\u043e\\u0440 > *\\/\\r\\n.ace_editor.ace_dark .ace_meta.ace_tag.ace_tag-name{color:#569CD6!important} \\/* \\u0442\\u0435\\u0433\\u0438 *\\/\\r\\n.ace_editor.ace_dark .ace_string{color:#CE9178!important} \\/* \\u0441\\u0435\\u043b\\u0435\\u043a\\u0442\\u043e\\u0440\\u044b *\\/\\r\\n.ace_editor.ace_dark .ace_entity.ace_other.ace_attribute-name{color:#9CDCFE!important} \\/* \\u0430\\u0442\\u0440\\u0438\\u0431\\u0443\\u0442\\u044b *\\/\\r\\n.ace_editor.ace_dark .ace_variable.ace_other.ace_readwrite{color:#8299B3!important} \\/* \\u043a\\u0430\\u0432\\u044b\\u0447\\u043a\\u0438 \\u0444\\u0438\\u0433\\u0443\\u0440\\u043d\\u044b\\u0435 *\\/\\r\\n.ace_editor.ace_dark .ace_gutter{color:#666E79!important}\\r\\n.ace_editor.ace_dark .ace_text {color:#BDBDBD!important} \\/* \\u0442\\u0435\\u043a\\u0441\\u0442 *\\/\\r\\n.ace_editor.ace_dark .ace_identifier {color:#DCDCAA!important} \\/* \\u0442\\u0435\\u0433\\u0438 \\u0442\\u0432\\u0438\\u0433 \\u0440\\u0430\\u0437\\u043c\\u0435\\u0442\\u043a\\u0438*\\/\\r\\n.ace_editor.ace_dark .ace_comment {color:#6A9955!important} \\/* \\u043a\\u043e\\u043c\\u043c\\u0435\\u043d\\u0442\\u0430\\u0440\\u0438\\u0438 *\\/\\r\\n.ace_editor.ace_dark .ace_active-line,.ace_gutter-active-line{background-color:#282828!important} \\/* \\u043f\\u043e\\u0434\\u0441\\u0432\\u0435\\u0442\\u043a\\u0430 \\u0441\\u0442\\u0440\\u043e\\u043a\\u0438 *\\/\\r\\n.ace_editor.ace_dark .ace_scroller,.ace_gutter {background-color:#1E1E1E!important} \\/* \\u0444\\u043e\\u043d *\\/\\r\\n\\r\\n.field-mediafinder.style-image-single .find-object .icon-container, .field-mediafinder.style-image-single .find-object .info, .field-mediafinder.style-image-single .find-object .icon-container img {max-width: 200px}\\r\\nnav#layout-mainmenu.navbar-mode-inline ul.mainmenu-nav li a .nav-icon > * {max-width: 24px;font-size: 24px}\"}');
+(6, 'backend_brand_settings', '{\"app_name\":\"Starter\",\"app_tagline\":\"I\'m free!\",\"primary_color\":\"#34495e\",\"secondary_color\":\"#e67e22\",\"accent_color\":\"#3498db\",\"menu_mode\":\"inline\",\"custom_css\":\"a:focus {outline: none;}\\r\\n.ace_editor#MarkdownEditor-formContentHtml-content_html-code {min-height: 348px;}\\r\\n.ace_editor.ace_dark {font-size:15px; line-height:1.4!important; font-family:\'Menlo\',\'PT Mono\',\'Ubuntu Mono\',monospace!important}\\r\\n.ace_editor.ace_dark .ace_meta.ace_tag{color:#808080!important} \\/* < \\u043e\\u0431\\u0435\\u0440\\u0442\\u043a\\u0430 \\u0442\\u0435\\u0433\\u043e\\u0432 > *\\/\\r\\n.ace_editor.ace_dark .ace_operator {color:#808080!important} \\/* < \\u043e\\u043f\\u0435\\u0440\\u0430\\u0442\\u043e\\u0440 > *\\/\\r\\n.ace_editor.ace_dark .ace_meta.ace_tag.ace_tag-name{color:#569CD6!important} \\/* \\u0442\\u0435\\u0433\\u0438 *\\/\\r\\n.ace_editor.ace_dark .ace_string{color:#CE9178!important} \\/* \\u0441\\u0435\\u043b\\u0435\\u043a\\u0442\\u043e\\u0440\\u044b *\\/\\r\\n.ace_editor.ace_dark .ace_entity.ace_other.ace_attribute-name{color:#9CDCFE!important} \\/* \\u0430\\u0442\\u0440\\u0438\\u0431\\u0443\\u0442\\u044b *\\/\\r\\n.ace_editor.ace_dark .ace_variable.ace_other.ace_readwrite{color:#8299B3!important} \\/* \\u043a\\u0430\\u0432\\u044b\\u0447\\u043a\\u0438 \\u0444\\u0438\\u0433\\u0443\\u0440\\u043d\\u044b\\u0435 *\\/\\r\\n.ace_editor.ace_dark .ace_gutter{color:#666E79!important}\\r\\n.ace_editor.ace_dark .ace_text {color:#BDBDBD!important} \\/* \\u0442\\u0435\\u043a\\u0441\\u0442 *\\/\\r\\n.ace_editor.ace_dark .ace_identifier {color:#DCDCAA!important} \\/* \\u0442\\u0435\\u0433\\u0438 \\u0442\\u0432\\u0438\\u0433 \\u0440\\u0430\\u0437\\u043c\\u0435\\u0442\\u043a\\u0438*\\/\\r\\n.ace_editor.ace_dark .ace_comment {color:#6A9955!important} \\/* \\u043a\\u043e\\u043c\\u043c\\u0435\\u043d\\u0442\\u0430\\u0440\\u0438\\u0438 *\\/\\r\\n.ace_editor.ace_dark .ace_active-line,.ace_gutter-active-line{background-color:#282828!important} \\/* \\u043f\\u043e\\u0434\\u0441\\u0432\\u0435\\u0442\\u043a\\u0430 \\u0441\\u0442\\u0440\\u043e\\u043a\\u0438 *\\/\\r\\n.ace_editor.ace_dark .ace_scroller,.ace_gutter {background-color:#1E1E1E!important} \\/* \\u0444\\u043e\\u043d *\\/\\r\\n\\r\\n.field-mediafinder.style-image-single .find-object .icon-container, .field-mediafinder.style-image-single .find-object .info, .field-mediafinder.style-image-single .find-object .icon-container img {max-width: 200px}\\r\\nnav#layout-mainmenu.navbar-mode-inline ul.mainmenu-nav li a .nav-icon > * {max-width: 24px;font-size: 24px}\"}'),
+(7, 'system_mail_settings', '{\"send_mode\":\"smtp\",\"sender_name\":\"OctoberCMS\",\"sender_email\":\"noreply@domain.tld\",\"sendmail_path\":\"\\/usr\\/sbin\\/sendmail -bs\",\"smtp_address\":\"smtp.mailgun.org\",\"smtp_port\":\"587\",\"smtp_user\":\"\",\"smtp_password\":\"\",\"smtp_authorization\":\"0\",\"smtp_encryption\":\"tls\",\"mailgun_domain\":\"\",\"mailgun_secret\":\"\",\"mandrill_secret\":\"\",\"ses_key\":\"\",\"ses_secret\":\"\",\"ses_region\":\"\",\"sparkpost_secret\":\"\"}');
 
 -- --------------------------------------------------------
 
@@ -1104,10 +1065,10 @@ INSERT INTO `vdomah_blogviews_views` (`views`, `post_id`) VALUES
 (77, 1),
 (65, 2),
 (56, 3),
-(46, 4),
-(35, 5),
-(29, 6),
-(21, 7);
+(47, 4),
+(36, 5),
+(32, 6),
+(24, 7);
 
 --
 -- Индексы сохранённых таблиц
@@ -1497,7 +1458,7 @@ ALTER TABLE `rainlab_translate_messages`
 -- AUTO_INCREMENT для таблицы `system_event_logs`
 --
 ALTER TABLE `system_event_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `system_files`
@@ -1545,7 +1506,7 @@ ALTER TABLE `system_plugin_versions`
 -- AUTO_INCREMENT для таблицы `system_request_logs`
 --
 ALTER TABLE `system_request_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `system_revisions`
@@ -1557,7 +1518,7 @@ ALTER TABLE `system_revisions`
 -- AUTO_INCREMENT для таблицы `system_settings`
 --
 ALTER TABLE `system_settings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

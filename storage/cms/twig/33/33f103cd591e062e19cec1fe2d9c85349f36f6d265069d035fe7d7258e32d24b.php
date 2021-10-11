@@ -57,7 +57,7 @@ class __TwigTemplate_8535c6e8c2fe7ed03608cbff8497548dc1551900537e08820dd2d5c9f3c
   <meta name=\"author\" content=\"llcawc by pasmurno\">
   <link rel=\"icon\" type=\"image/png\" href=\"";
         // line 11
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/october.png");
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/favicon.png");
         echo "\">
   <meta property=\"og:image\" content=\"";
         // line 12
@@ -94,13 +94,29 @@ class __TwigTemplate_8535c6e8c2fe7ed03608cbff8497548dc1551900537e08820dd2d5c9f3c
   <!-- Scripts -->
   <script src=\"";
         // line 24
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/js/lib.min.js");
+        echo "\"></script>
+  <script src=\"";
+        // line 25
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/js/app.min.js");
         echo "\"></script>
   ";
-        // line 25
+        // line 26
+        $_minify = System\Classes\CombineAssets::instance()->useMinify;
+        if ($_minify) {
+            echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.combined-min.js"></script>'.PHP_EOL;
+        }
+        else {
+            echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.js"></script>'.PHP_EOL;
+            echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.extras.js"></script>'.PHP_EOL;
+        }
+        echo '<link rel="stylesheet" property="stylesheet" href="' . Request::getBasePath() .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
+        unset($_minify);
+        // line 27
+        echo "  ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 26
+        // line 28
         echo "
 </body>
 
@@ -119,7 +135,7 @@ class __TwigTemplate_8535c6e8c2fe7ed03608cbff8497548dc1551900537e08820dd2d5c9f3c
 
     public function getDebugInfo()
     {
-        return array (  104 => 26,  101 => 25,  97 => 24,  93 => 22,  89 => 21,  84 => 20,  80 => 19,  71 => 14,  68 => 13,  64 => 12,  60 => 11,  55 => 9,  51 => 8,  46 => 6,  39 => 1,);
+        return array (  120 => 28,  116 => 27,  105 => 26,  101 => 25,  97 => 24,  93 => 22,  89 => 21,  84 => 20,  80 => 19,  71 => 14,  68 => 13,  64 => 12,  60 => 11,  55 => 9,  51 => 8,  46 => 6,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -134,7 +150,7 @@ class __TwigTemplate_8535c6e8c2fe7ed03608cbff8497548dc1551900537e08820dd2d5c9f3c
   <meta name=\"title\" content=\"{{ this.page.meta_title }}\">
   <meta name=\"description\" content=\"{{ this.page.meta_description }}\">
   <meta name=\"author\" content=\"llcawc by pasmurno\">
-  <link rel=\"icon\" type=\"image/png\" href=\"{{ 'assets/images/october.png'|theme }}\">
+  <link rel=\"icon\" type=\"image/png\" href=\"{{ 'assets/images/favicon.png'|theme }}\">
   <meta property=\"og:image\" content=\"{{'assets/images/preview.jpg'|theme}}\">
   {% styles %}
   <link rel=\"stylesheet\" href=\"{{ 'assets/css/main.min.css'|theme }}\" />
@@ -147,7 +163,9 @@ class __TwigTemplate_8535c6e8c2fe7ed03608cbff8497548dc1551900537e08820dd2d5c9f3c
   {% partial 'footer' %}
 
   <!-- Scripts -->
+  <script src=\"{{ 'assets/js/lib.min.js'|theme }}\"></script>
   <script src=\"{{ 'assets/js/app.min.js'|theme }}\"></script>
+  {% framework extras %}
   {% scripts %}
 
 </body>
@@ -157,13 +175,13 @@ class __TwigTemplate_8535c6e8c2fe7ed03608cbff8497548dc1551900537e08820dd2d5c9f3c
     
     public function checkSecurity()
     {
-        static $tags = array("styles" => 13, "partial" => 19, "page" => 20, "scripts" => 25);
+        static $tags = array("styles" => 13, "partial" => 19, "page" => 20, "framework" => 26, "scripts" => 27);
         static $filters = array("escape" => 6, "theme" => 11);
         static $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
-                ['styles', 'partial', 'page', 'scripts'],
+                ['styles', 'partial', 'page', 'framework', 'scripts'],
                 ['escape', 'theme'],
                 []
             );
