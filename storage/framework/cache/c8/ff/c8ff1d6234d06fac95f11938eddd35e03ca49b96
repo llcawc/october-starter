@@ -1,0 +1,5 @@
+1634053754a:1:{s:11:"welcome.htm";a:6:{s:8:"fileName";s:11:"welcome.htm";s:7:"content";s:355:"<h1>The demo</h1>
+<p>Это <a href="http://octobercms.com">October CMS</a> демонстрационная тема, в которой исследуются основные функции. Вы найдете файлы, используемые этой темой, в <strong>themes/demo</strong> каталоге вашей установки.</p>
+";s:5:"mtime";i:1618206760;s:6:"markup";s:354:"<h1>The demo</h1>
+<p>Это <a href="http://octobercms.com">October CMS</a> демонстрационная тема, в которой исследуются основные функции. Вы найдете файлы, используемые этой темой, в <strong>themes/demo</strong> каталоге вашей установки.</p>";s:4:"code";N;s:12:"parsedMarkup";s:354:"<h1>The demo</h1>
+<p>Это <a href="http://octobercms.com">October CMS</a> демонстрационная тема, в которой исследуются основные функции. Вы найдете файлы, используемые этой темой, в <strong>themes/demo</strong> каталоге вашей установки.</p>";}}
