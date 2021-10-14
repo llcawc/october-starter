@@ -1,6 +1,6 @@
 // VARIABLES & PATHS
 
-let theme = 'starter' // Theme folder name
+let theme = 'october' // Theme folder name
 let paths = {
   images: {
     src: `themes/${theme}/app/img/**/*`,

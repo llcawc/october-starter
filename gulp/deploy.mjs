@@ -1,6 +1,6 @@
 // VARIABLES & PATHS
 
-const theme = 'starter' // Theme folder name
+const theme = 'october' // Theme folder name
 const paths = {
   deploy: {
     hostname: 'host.ru', // Deploy hostname

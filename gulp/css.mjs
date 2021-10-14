@@ -1,6 +1,6 @@
 // VARIABLES & PATHS
 
-let theme = 'starter' // Theme folder name
+let theme = 'october' // Theme folder name
 let paths = {
   styles: {
     src: `themes/${theme}/app/scss/main.*`,
@@ -12,7 +12,8 @@ let paths = {
       `plugins/**/*.htm`,
       `themes/${theme}/**/*.htm`,
       `themes/${theme}/app/js/**/*.js`,
-      // `themes/${theme}/app/vendor/**/*.js`,
+      `themes/${theme}/app/vendor/magnific-popup/*.js`,
+      `themes/${theme}/app/vendor/magnific-popup/*.scss`,
       'node_modules/photoswipe/dist/photoswipe.css',
       'node_modules/bootstrap/scss/_reboot.scss',
       'node_modules/bootstrap/js/dist/dom/*.js',

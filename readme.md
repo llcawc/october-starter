@@ -1,6 +1,6 @@
 # Starter Template October CMS
 
-_Revision 2.0.1 from 2021.10.12_
+_Revision 1.2.0 from 2021.10.14_
 
 > Starter Template by pasmurno from llcawc<br>
 > Based on October CMS. SASS/SCSS/ES6. Gulp. Rollup. Terser. Imagemin.<br>

@@ -1,9 +1,7 @@
 // VARIABLES & PATHS
-const theme = 'starter' // Theme folder name
+const theme = 'october' // Theme folder name
 
 // LOGIC
-// import gulp from 'gulp'
-// const { src, dest, parallel, series, watch } = gulp
 import { rollup } from 'rollup'
 import { babel } from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'

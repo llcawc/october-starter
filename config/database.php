@@ -57,7 +57,7 @@ return [
             'engine'     => 'InnoDB',
             'host'       => 'localhost',
             'port'       => 3306,
-            'database'   => 'starter',
+            'database'   => 'october',
             'username'   => 'admin',
             'password'   => '',
             'charset'    => 'utf8mb4',

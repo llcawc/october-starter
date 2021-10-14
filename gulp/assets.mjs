@@ -1,5 +1,5 @@
 // VARIABLES & PATHS
-const theme = 'starter' // Theme folder name
+const theme = 'october' // Theme folder name
 const paths = {
   cont: {
     src: [`themes/${theme}/app/fonts/**/*`, `themes/${theme}/app/vendor/**/*`],
