@@ -2,12 +2,12 @@
 
 use October\Rain\Database\Model;
 use October\Rain\Database\Pivot;
-use Illuminate\Database\Capsule\Manager as CapsuleManager;
+use October\Rain\Database\Capsule\Manager as CapsuleManager;
 use October\Rain\Events\Dispatcher;
 
 class DbTestCase extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->db = new CapsuleManager;
         $this->db->addConnection([
@@ -22,7 +22,7 @@ class DbTestCase extends TestCase
         Model::setEventDispatcher(new Dispatcher());
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->flushModelEventListeners();
         parent::tearDown();

@@ -645,7 +645,8 @@ class Builder
             $result = $cache->rememberForever($key, $callback);
         }
         else {
-            $result = $cache->remember($key, $minutes, $callback);
+            $expiresAt = now()->addMinutes($minutes);
+            $result = $cache->remember($key, $expiresAt, $callback);
         }
 
         // If this is an old cache record, we can check if the cache has been busted
@@ -659,7 +660,8 @@ class Builder
                 $result = $cache->rememberForever($key, $callback);
             }
             else {
-                $result = $cache->remember($key, $minutes, $callback);
+                $expiresAt = now()->addMinutes($minutes);
+                $result = $cache->remember($key, $expiresAt, $callback);
             }
         }
 
@@ -769,9 +771,7 @@ class Builder
      */
     public static function clearInternalCache()
     {
-        if (MemoryCacheManager::isEnabled()) {
-            Model::getCacheManager()->driver()->flushInternalCache();
-        }
+        Model::flushDuplicateCache();
     }
 
     /**

@@ -80,11 +80,11 @@ class Model extends Extendable implements ArrayAccess, Arrayable, Jsonable, Json
     protected $wrapCode = true;
 
     /**
-     * @var int The maximum allowed path nesting level. The default value is 2,
+     * @var int The maximum allowed path nesting level. The default value is 5,
      * meaning that files can only exist in the root directory, or in a
      * subdirectory. Set to null if any level is allowed.
      */
-    protected $maxNesting = 2;
+    protected $maxNesting = 5;
 
     /**
      * @var boolean Indicated whether the object was loaded from the cache.
@@ -1546,6 +1546,17 @@ class Model extends Extendable implements ArrayAccess, Arrayable, Jsonable, Json
      */
     public static function initCacheItem(&$item)
     {
+    }
+
+    /**
+     * Flush the memory cache.
+     * @return void
+     */
+    public static function flushDuplicateCache()
+    {
+        if (MemoryCacheManager::isEnabled() && self::getCacheManager() !== null) {
+            self::getCacheManager()->driver()->flushInternalCache();
+        }
     }
 
     /**

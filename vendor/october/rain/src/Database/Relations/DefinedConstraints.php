@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany as BelongsToManyBase;
  */
 trait DefinedConstraints
 {
-
     /**
      * Set the defined constraints on the relation query.
      *

@@ -2,8 +2,7 @@
 
 class SluggableTest extends DbTestCase
 {
-
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -138,7 +137,6 @@ class SluggableTest extends DbTestCase
         $testModel2 = TestModelSluggable::Create(['name' => 'test']);
         $this->assertEquals($testModel2->slug, 'test');
     }
-
 
     protected function createTables()
     {

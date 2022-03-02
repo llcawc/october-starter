@@ -11,7 +11,7 @@ class EncryptableTest extends DbTestCase
      */
     protected $encrypter;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->createTable();

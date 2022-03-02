@@ -1,32 +1,28 @@
 @font-face {
   font-family: 'lato';
   src: url('../fonts/lato-black-webfont.eot');
-  src: url('../fonts/lato-black-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato-black-webfont.svg#latoblack') format('svg'),
-    url('../fonts/lato-black-webfont.woff') format('woff'), url('../fonts/lato-black-webfont.ttf') format('truetype');
+  src: url('../fonts/lato-black-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato-black-webfont.svg#latoblack') format('svg'), url('../fonts/lato-black-webfont.woff') format('woff'), url('../fonts/lato-black-webfont.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'lato';
   src: url('../fonts/lato-italic-webfont.eot');
-  src: url('../fonts/lato-italic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato-italic-webfont.svg#latoitalic') format('svg'),
-    url('../fonts/lato-italic-webfont.woff') format('woff'), url('../fonts/lato-italic-webfont.ttf') format('truetype');
+  src: url('../fonts/lato-italic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato-italic-webfont.svg#latoitalic') format('svg'), url('../fonts/lato-italic-webfont.woff') format('woff'), url('../fonts/lato-italic-webfont.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: 'lato';
   src: url('../fonts/lato-regular-webfont.eot');
-  src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato-regular-webfont.svg#latoregular') format('svg'),
-    url('../fonts/lato-regular-webfont.woff') format('woff'), url('../fonts/lato-regular-webfont.ttf') format('truetype');
+  src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato-regular-webfont.svg#latoregular') format('svg'), url('../fonts/lato-regular-webfont.woff') format('woff'), url('../fonts/lato-regular-webfont.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'lato';
   src: url('../fonts/lato-light-webfont.eot');
-  src: url('../fonts/lato-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato-light-webfont.svg#latolight') format('svg'),
-    url('../fonts/lato-light-webfont.woff') format('woff'), url('../fonts/lato-light-webfont.ttf') format('truetype');
+  src: url('../fonts/lato-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato-light-webfont.svg#latolight') format('svg'), url('../fonts/lato-light-webfont.woff') format('woff'), url('../fonts/lato-light-webfont.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
@@ -413,7 +409,7 @@
   margin: 20px 10px 0 10px;
 }
 .navbar-autohide {
-  transition: transform 0.5s;
+  transition: transform .5s;
 }
 .navbar-autohide.is-hidden {
   transform: translateY(-72px);
@@ -423,15 +419,14 @@
 }
 .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li > a:after {
   position: absolute;
-  height: 5px;
-  bottom: 0;
+  height: 4px;
+  bottom: -1px;
   content: '';
-  border-radius: 2px;
+  border-radius: 4px;
   z-index: 5;
   width: 0;
   left: 50%;
   transition: all 0.2s ease 0.05s;
-  filter: drop-shadow(0 1px 0 #f78000);
 }
 .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li.active > a:after {
   width: 100% !important;
@@ -446,13 +441,13 @@
 }
 .navbar-inverse .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li.active > a:after,
 .navbar-inverse .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li > a:hover:after {
-  background: #e67e22;
+  background: #000000;
 }
 .navbar-inverse .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li.active > a:hover:after {
-  background: #ff7800;
+  background: #000000;
 }
 .navbar-inverse .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li > a:hover:after {
-  background: purple;
+  background: #e67e22;
 }
 .navbar-default .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li.active > a:after,
 .navbar-default .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li > a:hover:after {

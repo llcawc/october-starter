@@ -89,6 +89,18 @@ class BelongsToMany extends BelongsToManyBase
     }
 
     /**
+     * Override sync() method of BelongToMany relation in order to flush the query cache.
+     * @param array $ids
+     * @param bool $detaching
+     * @return array
+     */
+    public function sync($ids, $detaching = true)
+    {
+        parent::sync($ids, $detaching);
+        $this->flushDuplicateCache();
+    }
+
+    /**
      * Create a new instance of this related model with deferred binding support.
      */
     public function create(array $attributes = [], array $pivotData = [], $sessionKey = null)
@@ -185,10 +197,10 @@ class BelongsToMany extends BelongsToManyBase
             return;
         }
 
-        /*
-         * See Illuminate\Database\Eloquent\Relations\Concerns\InteractsWithPivotTable
+        /**
+         * @see Illuminate\Database\Eloquent\Relations\Concerns\InteractsWithPivotTable
          */
-        parent::detach($ids, $touch);
+        parent::detach($attachedIdList, $touch);
 
         /**
          * @event model.relation.afterDetach
@@ -219,7 +231,7 @@ class BelongsToMany extends BelongsToManyBase
             $this->parent->reloadRelations($this->relationName);
         }
         else {
-            $this->parent->bindDeferred($this->relationName, $model, $sessionKey);
+            $this->parent->bindDeferred($this->relationName, $model, $sessionKey, $pivotData);
         }
     }
 
@@ -406,7 +418,7 @@ class BelongsToMany extends BelongsToManyBase
      */
     public function getRelatedIds($sessionKey = null)
     {
-        traceLog('Method BelongsToMany::allRelatedIds has been deprecated, use BelongsToMany::allRelatedIds instead.');
+        traceLog('Method BelongsToMany::getRelatedIds has been deprecated, use BelongsToMany::allRelatedIds instead.');
         return $this->allRelatedIds($sessionKey)->all();
     }
 }
