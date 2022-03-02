@@ -1,18 +1,15 @@
 ##
-description = "Default layout"
+description = "Blanck layout"
 ==
 <!DOCTYPE html>
 <html lang="ru">
 
 <head>
   <meta charset="utf-8"/>
-  <title>Winter CMS Starter • {{ this.page.title }}</title>
+  <title>{{ this.page.title }}</title>
   <meta name="author" content="llcawc by pasmurno"/>
-  <meta name="title" content="{{ this.page.meta_title }}"/>
-  <meta name="description" content="{{ this.page.meta_description }}"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="{{'assets/images/favicon.webp'|theme}}" type="image/webp"/>
-  <meta property="og:image" content="{{'assets/images/preview.webp'|theme}}">
   <!-- styles -->
   {% styles %}
   <!-- Compressed and components style file: bootstrap + libraries and custom -->
@@ -22,18 +19,14 @@ description = "Default layout"
 </head>
 
 <body>
-  {% partial 'header' %}
   <!-- display content -->
     {% page %}
   <!-- /display content -->
-  {% partial 'footer' %}
-  {% partial 'popshare' %}
   <!-- Compressed JavaScript: libraries and custom script -->
   <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.6.0,npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   {% framework %}
   {% scripts %}<!-- main -->
   <script src="{{'assets/js/main.min.js'|theme}}"></script>
-  {% partial 'pswshare' %}
 </body>
 
 </html>
