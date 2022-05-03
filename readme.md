@@ -1,8 +1,8 @@
 # Starter Template October CMS
 
-_Revision 0.2.2 from 2022.02.22_
+_Revision 0.2.3 from 2022.05.03_
 
-> October CMS Starter Template by pasmurno<br> Based on OctoberCMS v1.1, SASS/SCSS. PostCSS. Gulp. Rollup and module JS. Bootstrap. Bootstrap-Icons.<br> [October](https://octobercms.com/) is a Content Management System (CMS) and web platform whose sole purpose is to make your development workflow simple again.
+> October CMS Starter Template by pasmurno<br> Based on OctoberCMS v1.1.12, SASS/SCSS. PostCSS. Gulp. Rollup and module JS. Bootstrap. Bootstrap-Icons.<br> [October](https://octobercms.com/) is a Content Management System (CMS) and web platform whose sole purpose is to make your development workflow simple again.
 
 ---
 
